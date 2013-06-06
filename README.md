@@ -1,4 +1,3 @@
-
 ##NETMF 4.3 Community features and GCC compatibility
 
 
@@ -28,5 +27,5 @@ The HAL driver is provided to allow implementation for other platforms.
   The compiled firmware and the managed assemblies are availables in 'Ready to use' directory.
 
 -------------  
-###Author
-Nicolas Gallerand
+
+**Nicolas Gallerand**
