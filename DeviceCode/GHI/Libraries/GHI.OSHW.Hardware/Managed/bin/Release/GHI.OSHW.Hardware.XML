@@ -1,0 +1,1691 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GHI.OSHW.Hardware</name>
+    </assembly>
+    <members>
+        <member name="T:GHI.OSHW.Hardware.LowLevel.AddressSpace">
+            <summary>
+            Provides access to the address space.
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LowLevel.AddressSpace.Write(System.UInt32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes a buffer to the target address space.
+            </summary>
+            <param name="address">Starting address.</param>
+            <param name="buffer">Buffer.</param>
+            <param name="offset">Offset.</param>
+            <param name="count">Count.</param>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LowLevel.AddressSpace.Read(System.UInt32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads the address space into a buffer.
+            </summary>
+            <param name="address">Starting address.</param>
+            <param name="buffer">Buffer.</param>
+            <param name="offset">Offset.</param>
+            <param name="count">Count.</param>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.DeviceID">
+            <summary>
+            An enum that lists GHI's OSHW boards.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.DeviceID.FEZ_CERB">
+            <summary>
+            Is used for any board in the Cerberus family, such as FEZ Cerberus, FEZ Cerbuino, and FEZ Cerb40.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.DeviceID.FEZ_HYDRA">
+            <summary>
+            Is used for the FEZ Hydra
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.DeviceInfo">
+            <summary>
+            A class that provide device specific info
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.DeviceInfo.GetDeviceID">
+            <summary>
+            Returns the DeviceID for this board. See the DeviceD enum for more info.
+            </summary>
+            <returns>The DeviceID for this board.</returns>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerberus">
+            <summary>
+            Exposes FEZ Cerberus specific functionality.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Led">
+            <summary>
+            Board Led Pin (PC4)
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerberus.SPIPort">
+            <summary>
+            Available SPI ports
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.SPIPort.None">
+            <summary>
+            No SPI port specified
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.SPIPort.SPI1">
+            <summary>
+            SPI port 1 (SCLK=PB3, MISO=PB4, MOSI=PB5)
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerberus.COMPort">
+            <summary>
+            Available serial ports
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.COMPort.COM1">
+            <summary>
+            COM port 1 (TX=PC6, RX=PC7)
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.COMPort.COM2">
+            <summary>
+            COM port 2 (TX=PA2, RX=PA3, CTS=PA0, RTS=PA1)
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.COMPort.COM3">
+            <summary>
+            COM port 3 (TX=PB10, RX=PB11)
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerberus.PWMChannel">
+            <summary>
+            PWM output available channels
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.None">
+            <summary>
+            No PWM channel specified
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PC6">
+            <summary>
+            PWM channel 0 (PC6) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PA7">
+            <summary>
+            PWM channel 1 (PA7) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PC7">
+            <summary>
+            PWM channel 2 (PC7) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PA8">
+            <summary>
+            PWM channel 3 (PA8) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PB0">
+            <summary>
+            PWM channel 4 (PB0) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PB1">
+            <summary>
+            PWM channel 5 (PB1) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PB5">
+            <summary>
+            PWM channel 6 (PB5) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PB4">
+            <summary>
+            PWM channel 7 (PB4) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PB3">
+            <summary>
+            PWM channel8  (PB3) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PB11">
+            <summary>
+            PWM channel 9 (PB11) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PB10">
+            <summary>
+            PWM channel 10 (PB10) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PA10">
+            <summary>
+            PWM channel 11 (PA10) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PA9">
+            <summary>
+            PWM channel 12 (PA9) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PA15">
+            <summary>
+            PWM channel 13 (PA15) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PB8">
+            <summary>
+            PWM channel 14 (PB8) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.PWMChannel.PB9">
+            <summary>
+            PWM channel 15 (PB9) 
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerberus.AnalogOutputChannel">
+            <summary>
+            Analog output available channels
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogOutputChannel.None">
+            <summary>
+            No analog output channel specified
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogOutputChannel.PA4">
+            <summary>
+            Analog output channel 0 (PA4) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogOutputChannel.PA5">
+            <summary>
+            Analog output channel 1 (PA5) 
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel">
+            <summary>
+            Analog input available channels
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.None">
+            <summary>
+            No analog channel specified
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PA6">
+            <summary>
+            Analog channel 0 (PA6) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PA2">
+            <summary>
+            Analog channel 1 (PA2) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PA3">
+            <summary>
+            Analog channel 2 (PA3) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PC0">
+            <summary>
+            Analog channel 3 (PC0) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PC1">
+            <summary>
+            Analog channel 4 (PC1) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PA4">
+            <summary>
+            Analog channel 5 (PA4) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PC2">
+            <summary>
+            Analog channel 6 (PC2) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PC3">
+            <summary>
+            Analog channel 7 (PC3) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PA5">
+            <summary>
+            Analog channel 8 (PA5) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PB0">
+            <summary>
+            Analog channel 9 (PB0) 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.AnalogChannel.PB1">
+            <summary>
+            Analog channel 10 (PB1) 
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerberus.Pin">
+            <summary>
+            Provides Pin definitions for FEZ Cerberus.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.GPIO_NONE">
+            <summary>A value indicating that no GPIO pin is specified.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA0">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA2">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA10">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA11">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA12">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA13">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA14">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PA15">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB0">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB2">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB10">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB11">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB12">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB13">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB14">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PB15">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC0">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC2">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC10">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC11">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC12">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC13">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC14">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PC15">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD0">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD2">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD10">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD11">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD12">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD13">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD14">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerberus.Pin.PD15">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerbuino">
+            <summary>
+            Exposes FEZ Cerbuino specific functionality.
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerbuino.Pin">
+            <summary>
+            Provides Pin definitions for FEZ Cerbuino.
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital">
+            <summary>
+            Provides Pin definitions for FEZ Cerbuino's Arduino-styled I/O headers.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.A0">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.A1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.A2">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.A3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.A4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.A5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D0">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D2">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D10">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D11">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D12">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.D13">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Digital.LED1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer">
+            <summary>
+            Provides Pin definitions for FEZ Cerbuino's Gadgeteer sockets.
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket1">
+            <summary>
+            Provides Pin definitions for FEZ Cerbuino's Socket 1.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket1.Pin3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket1.Pin4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket1.Pin5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket1.Pin6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket1.Pin7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket1.Pin8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket1.Pin9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket2">
+            <summary>
+            Provides Pin definitions for FEZ Cerbuino's Socket 2.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket2.Pin3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket2.Pin4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket2.Pin5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket2.Pin6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket2.Pin7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket2.Pin8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket2.Pin9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket3">
+            <summary>
+            Provides Pin definitions for FEZ Cerbuino's Socket 3.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket3.Pin3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket3.Pin4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket3.Pin5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket3.Pin6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket3.Pin7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket3.Pin8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.Gadgeteer.Socket3.Pin9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM">
+            <summary>
+            Provides Channel definitions for FEZ Cerbuino's PWM capable pins.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.D5">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.A2">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.A0">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.D11">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.D12">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.D13">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.D0">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.D1">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.D6">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.D9">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.PWM.D10">
+            <summary>PWM Output</summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZCerbuino.Pin.AnalogIn">
+            <summary>
+            Provides Channel definitions for FEZ Cerbuino's AnalogIn capable pins.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.AnalogIn.A0">
+            <summary>Analog Input</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.AnalogIn.A1">
+            <summary>Analog Input</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.AnalogIn.A2">
+            <summary>Analog Input</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.AnalogIn.A3">
+            <summary>Analog Input</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.AnalogIn.A4">
+            <summary>Analog Input</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZCerbuino.Pin.AnalogIn.A5">
+            <summary>Analog Input</summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZHydra">
+            <summary>
+            Exposes FEZ Hydra specific functionality.
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.FEZHydra.Pin">
+            <summary>
+            Provides Pin definitions for FEZ Hydra.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.GPIO_NONE">
+            <summary>A value indicating that no GPIO pin is specified.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA0">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA2">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA10">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA11">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA12">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA13">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA14">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA15">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA16">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA17">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA18">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA19">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA20">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA21">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA22">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA23">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA24">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA25">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA26">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA27">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA28">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA29">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA30">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PA31">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB0">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB2">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB10">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB11">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB12">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB13">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB14">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB15">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB16">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB17">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB18">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB19">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB20">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB21">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB22">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB23">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB24">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB25">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB26">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB27">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB28">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB29">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB30">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PB31">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC0">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC2">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC10">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC11">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC12">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC13">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC14">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC15">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC16">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC17">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC18">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC19">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC20">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC21">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC22">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC23">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC24">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC25">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC26">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC27">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC28">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC29">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC30">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PC31">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD0">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD1">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD2">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD3">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD4">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD5">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD6">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD7">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD8">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD9">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD10">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD11">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD12">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD13">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD14">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD15">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD16">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD17">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD18">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD19">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD20">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD21">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD22">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD23">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD24">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD25">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD26">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD27">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD28">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD29">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD30">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.FEZHydra.Pin.PD31">
+            <summary>Digital I/O.</summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.LCDController">
+            <summary>
+            Provides access to the LCD Screen Controller.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.HeadlessConfig">
+            <summary>
+            Choose for headless LCD.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LCDController.Set(GHI.OSHW.Hardware.LCDController.Configurations)">
+            <summary>
+            Sets LCD Configuration.
+            </summary>
+            <param name="config">LCD configuration stucture containing LCD configuration information to be set.</param>
+            <returns><c>true</c> if configurations were updated. <c>false</c> if configurations did not change.</returns>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.LCDController.Configurations">
+            <summary>
+            Configurations.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LCDController.Configurations.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LCDController.Configurations.#ctor(System.UInt32,System.UInt32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Byte,System.Byte,System.Byte,System.Byte,System.Byte,System.Byte,System.UInt32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="Width">Resolution width.</param>
+            <param name="Height">Resolution height.</param>
+            <param name="PriorityEnable">Internal LCD bus priority.</param>
+            <param name="OutputEnableIsFixed"><c>true</c> if LCD enable is a fixed state. <c>false</c> if LCD enable is managed by LCD controller.</param>
+            <param name="OutputEnablePolarity"><c>true</c> if active state is high.</param>
+            <param name="HorizontalSyncPolarity"><c>true</c> if active state is high.</param>
+            <param name="VerticalSyncPolarity"><c>true</c> if active state is high.</param>
+            <param name="PixelPolarity"><c>true</c> if your LCD clocks data on the rising edge of the LCD clock.</param>
+            <param name="HorizontalSyncPulseWidth">Horizontal Sync pulse width in clock cycles.</param>
+            <param name="HorizontalBackPorch">Horizontal back porch in clock cycles.</param>
+            <param name="HorizontalFrontPorch">Horizontal front porch in clock cycles.</param>
+            <param name="VerticalSyncPulseWidth">Vertical Sync pulse width given by number of lines.</param>
+            <param name="VerticalBackPorch">Vertical back porch given by number of lines.</param>
+            <param name="VerticalFrontPorch">Vertical front porch given by number of lines.</param>
+            <param name="PixelClockRateKHz">Pixel clock rate in KHz.</param>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.Width">
+            <summary>
+            Resolution width.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.Height">
+            <summary>
+            Resolution height.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.PriorityEnable">
+            <summary>
+            Internal LCD bus priority.
+            </summary>
+            <remarks>
+            This is only supported on EMX. By setting this flag to true, the LCD controller will get the highest priority for the processor which will significantly reduce the general performance of the system for other processes. This feature is usually used for displays that require very high refresh rates such as VGA displays.
+            </remarks>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.OutputEnableIsFixed">
+            <summary>
+            <c>true</c> if LCD enable is a fixed state. <c>false</c> if LCD enable is managed by LCD controller.
+            </summary>
+            <remarks>
+            For ChipworkX, LCD Enable is PB3. If Enable is fixed, no changes are done for PB3 and it can be used as a regular I/O. If Enable is not fixed, LCD Enable is handled by the LCD controller directly.
+            </remarks>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.OutputEnablePolarity">
+            <summary>
+            <c>true</c> if active state is high.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.HorizontalSyncPolarity">
+            <summary>
+            <c>true</c> if active state is high.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.VerticalSyncPolarity">
+            <summary>
+            <c>true</c> if active state is high.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.PixelPolarity">
+            <summary>
+            <c>true</c> if your LCD clocks data on the rising edge of the LCD clock.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.HorizontalSyncPulseWidth">
+            <summary>
+            Horizontal Sync pulse width in clock cycles.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.HorizontalBackPorch">
+            <summary>
+            Horizontal back porch in clock cycles.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.HorizontalFrontPorch">
+            <summary>
+            Horizontal front porch in clock cycles.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.VerticalSyncPulseWidth">
+            <summary>
+            Vertical Sync pulse width given by number of lines.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.VerticalBackPorch">
+            <summary>
+            Vertical back porch given by number of lines.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.VerticalFrontPorch">
+            <summary>
+            Vertical front porch given by number of lines.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.LCDController.Configurations.PixelClockRateKHz">
+            <summary>
+            Pixel clock rate in KHz to calculate the pixel clock divider.
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.LowLevel.Register">
+            <summary>
+            Provide register access.
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LowLevel.Register.#ctor(System.UInt32)">
+            <summary>
+            Creates a new register.
+            </summary>
+            <param name="address">Address.</param>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LowLevel.Register.Write(System.UInt32)">
+            <summary>
+            Writes a value to the register.
+            </summary>
+            <param name="value">Value to be written.</param>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LowLevel.Register.Read">
+            <summary>
+            Reads the register's value.
+            </summary>
+            <returns>Value of the register.</returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LowLevel.Register.SetBits(System.UInt32)">
+            <summary>
+            Sets certain bits in the register using a mask.
+            </summary>
+            <param name="mask">Register value mask.</param>
+            <remarks>
+            Bits of value 1 in mask are set in the register.<br/>
+            Bits of value 0 in mask are not changed.<br/>
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LowLevel.Register.ClearBits(System.UInt32)">
+            <summary>
+            Clears certain bits in the register using a mask.
+            </summary>
+            <param name="mask">Register value mask.</param>
+            <remarks>
+            Bits of value 1 in mask are cleared in the register.<br/>
+            Bits of value 0 in mask are not changed.<br/>
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.LowLevel.Register.ToggleBits(System.UInt32)">
+            <summary>
+            Toggles certain bits in the register using a mask.
+            </summary>
+            <param name="mask">Register value mask.</param>
+            <remarks>
+            Bits of value 1 in mask are toggled in the register.<br/>
+            Bits of value 0 in mask are not changed.<br/>
+            </remarks>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.RTC">
+            <summary>
+            Real Time Clock functionality
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Initialize">
+            <summary>
+            Initializes the Real Time Clock
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.GetTime">
+            <summary>
+            Returns the RTC time
+            </summary>
+            <returns>Time</returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.SetTime(System.DateTime)">
+            <summary>
+            Sets the RTC time.
+            </summary>
+            <param name="time">Time to set.</param>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Hydra.RealTimeClock_Set(System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            Sets the Real Time Clock. Only used on Hydra.
+            </summary>
+            <param name="year">Year</param>
+            <param name="month">Month</param>
+            <param name="day">Day</param>
+            <param name="dayOfWeek">Day of Week</param>
+            <param name="hour">Hour</param>
+            <param name="minute">Minute</param>
+            <param name="second">Second</param>
+            <param name="millisecond">Millisecond</param>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Hydra.RealTimeClock_Get(System.UInt32@,System.UInt32@,System.UInt32@,System.UInt32@,System.UInt32@,System.UInt32@,System.UInt32@)">
+            <summary>
+            Gets the current time on the Real Time Clock. Only used on Hydra.
+            </summary>
+            <param name="year">Year</param>
+            <param name="month">Month</param>
+            <param name="day">Day</param>
+            <param name="hour">Hour</param>
+            <param name="minute">Minute</param>
+            <param name="second">Second</param>
+            <param name="millisecond">Millisecond</param>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Hydra.SLCK_SetSlowClockMode">
+            <summary>
+            Set clock mode. Only used on Hydra.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Hydra.SLCK_Is32k">
+            <summary>
+            Only used on Hydra.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Hydra.InitializeCrystal_32768">
+            <summary>
+            Only used on Hydra.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RCC_GetFlagStatus(System.UInt32)">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+            <param name="RCC_FLAG"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_WaitForSynchro">
+            <summary>
+            Waits for synchronization. Only used on Cerb based boards.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RCC_RTCCLKConfig(System.UInt32)">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+            <param name="RCC_RTCCLKSource"></param>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RCC_RTCCLKCmdEnable(System.UInt32)">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+            <param name="NewState"></param>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.PWR_BackupAccessCmd(System.UInt32)">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+            <param name="NewState"></param>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RCC_ResetConfig">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RCC_LSEConfig(System.UInt32)">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+            <param name="RCC_LSE"></param>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_Config">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_EnterInitMode">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_ExitInitMode">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_Init">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_Bcd2ToByte(System.Byte)">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+            <param name="Value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_ByteToBcd2(System.Byte)">
+            <summary>
+            . Only used on Cerb based boards.
+            </summary>
+            <param name="Value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_GetTime">
+            <summary>
+            Gets the time. Only used on Cerb based boards.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_GetDate">
+            <summary>
+             Gets the date. Only used on Cerb based boards.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_SetDate(System.Int32,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Sets the time. Only used on Cerb based boards.
+            </summary>
+            <param name="year">Year</param>
+            <param name="month">Month</param>
+            <param name="dayofweek">Day of Week</param>
+            <param name="date">Date</param>
+            <returns></returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.RTC.Cerb.RTC_SetTime(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Sets the time. Only used on Cerb based boards.
+            </summary>
+            <param name="hours">Hours</param>
+            <param name="minutes">Minutes</param>
+            <param name="seconds">Seconds</param>
+            <returns></returns>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.SoftwareI2CBus">
+            <summary>
+            Master I2C bus functionality implemented in software.
+            </summary>
+            <remarks>
+            This class provides I2C functionality on any two digital pins. It is implemented by toggling the pins using software. It only supports one master on the same bus. Multiple masters on different buses work correctly.<br/>
+            <br/>
+            You must provide two pins: one for I2C clock and one for I2C data. The user must connect external pull-up resistors on the pins as required for I2C operation.<br/>
+            <br/>
+            Currently, only 7-bit I2C addresses are supported.<br/>
+            Clock rate is currently ignored. Specify 0 for this field. This will make the rate as fast as possible.
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.SoftwareI2CBus.#ctor(Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin)">
+            <summary>
+            Creates an I2C bus using the clock and data pins.
+            </summary>
+            <param name="clockPin">Clock pin.</param>
+            <param name="dataPin">Data pin.</param>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.SoftwareI2CBus.CreateI2CDevice(System.UInt16,System.Int32)">
+            <summary>
+            Creates an I2C device on the bus.
+            </summary>
+            <param name="address">Address of the device. This must be a 7 bit address.</param>
+            <param name="clockRateKHz">Clock rate in KHz. Currently ignored. Specify 0 to go as fast as possible.</param>
+            <returns>Created I2C device.</returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.SoftwareI2CBus.DirectI2CWriteRead(Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,System.Int32,System.UInt16,System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32,System.Int32,System.Int32@,System.Int32@)">
+            <summary>
+            Processes I2C directly without creating objects.
+            </summary>
+            <param name="clockPin">Clock pin.</param>
+            <param name="dataPin">Data pin.</param>
+            <param name="clockRateKHz">Clock rate in KHz.</param>
+            <param name="address">Address of the device.</param>
+            <param name="writeBuffer">Write buffer.</param>
+            <param name="writeOffset">Offset into the write buffer.</param>
+            <param name="writeLength">Number of bytes to write.</param>
+            <param name="readBuffer">Read buffer.</param>
+            <param name="readOffset">Offset into the read buffer.</param>
+            <param name="readLength">Number of bytes to read.</param>
+            <param name="numWritten">Number of bytes written successfully.</param>
+            <param name="numRead">Number of bytes read successfully.</param>
+            <returns><c>true</c> if all the required bytes are written and read successfully.</returns>
+            <remarks>
+            Do not use this method. It is intended for internal use only. See <c>CreateI2CDevice</c> instead.
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.SoftwareI2CBus.Dispose">
+            <summary>
+            Disposes the I2C bus.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.SoftwareI2CBus.Finalize">
+            <exclude/>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.SoftwareI2CBus.I2CDevice">
+            <summary>
+            Represents an I2C device on a bus.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.SoftwareI2CBus.I2CDevice.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes a data buffer to the I2C device.
+            </summary>
+            <param name="buffer">Buffer.</param>
+            <param name="offset">Offset into the buffer.</param>
+            <param name="count">Number of bytes to write.</param>
+            <returns>Number of bytes sent successfully.</returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.SoftwareI2CBus.I2CDevice.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a data buffer from the I2C device.
+            </summary>
+            <param name="buffer">Buffer.</param>
+            <param name="offset">Offset into the buffer.</param>
+            <param name="count">Number of bytes to read.</param>
+            <returns>Number of bytes read successfully.</returns>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.SoftwareI2CBus.I2CDevice.WriteRead(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32,System.Int32,System.Int32@,System.Int32@)">
+            <summary>
+            Writes a data buffer then reads a data buffer from the I2C device.
+            </summary>
+            <param name="writeBuffer">Write buffer.</param>
+            <param name="writeOffset">Offset into the write buffer.</param>
+            <param name="writeLength">Number of bytes to write.</param>
+            <param name="readBuffer">Read buffer.</param>
+            <param name="readOffset">Offset into the read buffer.</param>
+            <param name="readLength">Number of bytes to read.</param>
+            <param name="numWritten">Number of bytes written successfully.</param>
+            <param name="numRead">Number of bytes read successfully.</param>
+            <returns><c>true</c> if all the required bytes are written and read successfully.</returns>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.StorageDev">
+            <summary>
+            Allows SD Card blockstorage to be added in realtime after system is booted
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.StorageDev.MountSD">
+            <summary>
+            Allows SD Card blockstorage to be added in realtime after system is booted
+            </summary>
+            <remarks>
+            A failed mount will raise a CLR_E_FAIL exception<br/>
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.StorageDev.MountSD(System.UInt32)">
+            <summary>
+            Allows SD Card blockstorage to be added in realtime after system is booted, specifying clock frequency in KHz
+            </summary>
+            <param name="ClockSpeedinKHz">Specify the SD Card's clock frequency in KHz</param>
+            <remarks>
+            A failed mount will raise a CLR_E_FAIL exception<br/>
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.StorageDev.MountSDToSystem">
+            <summary>
+            Allows SD Card blockstorage to be added in realtime after system is booted
+            </summary>
+            <remarks>
+            A failed mount will raise a CLR_E_FAIL exception<br/>
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.StorageDev.MountSDToSystem(System.UInt32)">
+            <summary>
+            Allows SD Card blockstorage to be added in realtime after system is booted, specifying clock frequency in KHz
+            </summary>
+            <param name="ClockSpeedinKHz">Specify the SD Card's clock frequency in KHz</param>
+            <remarks>
+            A failed mount will raise a CLR_E_FAIL exception<br/>
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.StorageDev.UnmountSD">
+            <summary>
+            Allows SD Card blockstorage to be removed in realtime without a system reboot
+            </summary>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.Util">
+            <summary>
+            Utilities.
+            </summary>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.Util.BitmapConvertBPP(System.Byte[],System.Byte[],GHI.OSHW.Hardware.Util.BPP_Type)">
+            <summary>
+            Converts <c>Bitmap</c> pixel bytes into different BPP representation.
+            </summary>
+            <param name="bitmapBuffer">Bitmap bytes.</param>
+            <param name="outputBuffer">Output buffer after conversion.</param>
+            <param name="bpp">Target bits per pixel representation.</param>
+            <remarks>
+            GHI Electronics' devices support Bitmap and WPF graphics natively on color TFT displays. A design may require a small low-cost SPI-based displays. Different SPI LCDs can have different BPP requirements. This function converts the Bitmap bytes, where each pixel is represented as 4 bytes, into the needed BPP representation and then it can be transferred to the display.<br/>
+            Start by doing all necessary graphics in NETMF on a Bitmap object. When you need to flush the results to the LCD:<br/>
+            1) Get the Bitmap bytes using <c>myBitmap.GetBitmap()</c>.<br/>
+            2) Use this conversion method to convert the buffer into the needed BPP.<br/>
+            3) Send output buffer to LCD over SPI.<br/>
+            <br/>
+            This drawing technique can be used also with Windows Presentation Foundation but it does not work on old non-TFT Embedded Master and it requires the following:<br/>
+            1) Set the display size to match your SPI-display using SetLCD. Use any values for timing and 0xFF for <c>PixelClockDivider</c> which will disable TFT LCD refresh.<br/>
+            2) Use the following code to fetch the Bitmap object from the WPF system.
+            <code>
+            WindowManager.Instance.PostRender += new PostRenderEventHandler(Instance_PostRender);
+            // …
+            void Instance_PostRender(DrawingContext dc)
+            {
+               // get bitmap bytes
+               byte[] MyBitmapBytes = dc.Bitmap.GetBitmap();
+            
+               // do any necessary conversion
+               Util.ConvertBPP(MyBitmapBytes, output, Util.BPP_Type.BPP16_RGB_LE);
+            
+               // send over SPI
+               MySPIDisplay.FlushData(output);
+            }
+            </code>
+            </remarks>
+        </member>
+        <member name="M:GHI.OSHW.Hardware.Util.PlayPCMAudio(Microsoft.SPOT.Hardware.Cpu.AnalogOutputChannel,System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Allows .wav file playback through AnalogOut
+            </summary>
+            <param name="channel">AnalogOut Channel</param>
+            <param name="data">.wav file buffer</param>
+            <param name="offset">Array offset</param>
+            <param name="count">Size of playback sample</param>
+            <param name="dataRate">Frequency in Hz</param>
+        </member>
+        <member name="T:GHI.OSHW.Hardware.Util.BPP_Type">
+            <summary>
+            Bits per pixel conversion type.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.Util.BPP_Type.BPP1_x128">
+            <summary>
+            1 BPP for displays of 128 width and 128 or 64 height. The 1-bit pixel is set if the bitmap pixel has any color besides black.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.Util.BPP_Type.BPP8_RGB">
+            <summary>
+            8 BPP with RGB 3:3:2.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.Util.BPP_Type.BPP8_RED">
+            <summary>
+            8 BPP from red channel.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.Util.BPP_Type.BPP8_GREEN">
+            <summary>
+            8 BPP from green channel.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.Util.BPP_Type.BPP8_BLUE">
+            <summary>
+            8 BPP from blue channel.
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.Util.BPP_Type.BPP16_RGB_BE">
+            <summary>
+            Big Endian 16 BPP with RGB 5:6:5. 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.Util.BPP_Type.BPP16_RGB_LE">
+            <summary>
+            Little Endian 16 BPP with RGB 5:6:5. 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.Util.BPP_Type.BPP16_BGR_BE">
+            <summary>
+            Big Endian 16 BPP with BGR 5:6:5. 
+            </summary>
+        </member>
+        <member name="F:GHI.OSHW.Hardware.Util.BPP_Type.BPP16_BGR_LE">
+            <summary>
+            Little Endian 16 BPP with BGR 5:6:5. 
+            </summary>
+        </member>
+    </members>
+</doc>

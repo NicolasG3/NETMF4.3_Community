@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Include\HardwareSerial_decl.h" />
+    <ClInclude Include="Community_Hardware_Settings.h" />
+    <ClInclude Include="Community_Hardware_Settings_Community_Hardware_SystemSettings.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Target\STM32F4\STM32F4_HardwareSerial\STM32F4_HardwareSerial_functions.cpp" />
+    <ClCompile Include="Community_Hardware_Settings.cpp" />
+    <ClCompile Include="Community_Hardware_Settings_Community_Hardware_SystemSettings.cpp" />
+    <ClCompile Include="Community_Hardware_Settings_Community_Hardware_SystemSettings_mshl.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{904828DC-76B6-4043-AE05-A471A1F249AB}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeOutput>Native.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>C:\MicroFrameworkPK_v4_3\Community\Include;C:\MicroFrameworkPK_v4_3\CLR\Libraries\SPOT;C:\MicroFrameworkPK_v4_3\Support\Include;C:\MicroFrameworkPK_v4_3\DeviceCode\Targets\Native\STM32F4;C:\GCC_ARM\lib\gcc\arm-none-eabi\4.6.2\include;C:\GCC_ARM\arm-none-eabi\include\c++\4.6.2\arm-none-eabi\armv7e-m\fpu\bits;C:\MicroFrameworkPK_v4_3\DeviceCode\cores\arm\include;C:\MicroFrameworkPK_v4_3\DeviceCode\Targets\Native\STM32F4\DeviceCode;C:\MicroFrameworkPK_v4_3\DeviceCode\Include;C:\MicroFrameworkPK_v4_3;C:\MicroFrameworkPK_v4_3\CLR\Include;C:\MicroFrameworkPK_v4_3\CLR\Libraries\CorLib;C:\MicroFrameworkPK_v4_3\DeviceCode\GHI\Include;C:\MicroFrameworkPK_v4_3\DeviceCode</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeOutput>Native.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>C:\MicroFrameworkPK_v4_3\Community\Include;C:\MicroFrameworkPK_v4_3\CLR\Libraries\SPOT;C:\MicroFrameworkPK_v4_3\Support\Include;C:\MicroFrameworkPK_v4_3\DeviceCode\Targets\Native\STM32F4;C:\GCC_ARM\lib\gcc\arm-none-eabi\4.6.2\include;C:\GCC_ARM\arm-none-eabi\include\c++\4.6.2\arm-none-eabi\armv7e-m\fpu\bits;C:\MicroFrameworkPK_v4_3\DeviceCode\cores\arm\include;C:\MicroFrameworkPK_v4_3\DeviceCode\Targets\Native\STM32F4\DeviceCode;C:\MicroFrameworkPK_v4_3\DeviceCode\Include;C:\MicroFrameworkPK_v4_3;C:\MicroFrameworkPK_v4_3\CLR\Include;C:\MicroFrameworkPK_v4_3\CLR\Libraries\CorLib;C:\MicroFrameworkPK_v4_3\DeviceCode\GHI\Include;C:\MicroFrameworkPK_v4_3\DeviceCode</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

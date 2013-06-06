@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Include\HardwareSerial_decl.h" />
+    <ClInclude Include="Community_Hardware_Settings.h" />
+    <ClInclude Include="Community_Hardware_Settings_Community_Hardware_SystemSettings.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Target\STM32F4\STM32F4_HardwareSerial\STM32F4_HardwareSerial_functions.cpp" />
+    <ClCompile Include="Community_Hardware_Settings.cpp" />
+    <ClCompile Include="Community_Hardware_Settings_Community_Hardware_SystemSettings.cpp" />
+    <ClCompile Include="Community_Hardware_Settings_Community_Hardware_SystemSettings_mshl.cpp" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,18 @@
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Directory>DeviceCode\Targets\Native\Interop\Community_Hardware_Settings</Directory>
+    <AssemblyName>Community_Hardware_Settings</AssemblyName>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+<ItemGroup>
+<HFile Include="Community_Hardware_Settings.h" />
+<Compile Include="Community_Hardware_Settings.cpp" />
+<Compile Include="Community_Hardware_Settings_Community_Hardware_SystemSettings_mshl.cpp" />
+<HFile Include="Community_Hardware_Settings_Community_Hardware_SystemSettings.h" />
+<Compile Include="Community_Hardware_Settings_Community_Hardware_SystemSettings.cpp" />
+</ItemGroup>
+<Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>

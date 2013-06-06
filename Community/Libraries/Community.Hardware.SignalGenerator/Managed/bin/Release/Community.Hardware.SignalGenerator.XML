@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Community.Hardware.SignalGenerator</name>
+    </assembly>
+    <members>
+        <member name="T:Community.Hardware.SignalGenerator">
+            <summary>
+            Allows the background generation of a binary signal on any available output pin.
+            <para>SignalGenerator can modulate a carrier frequency as used in IR remote control.</para>
+            <para>Easy settings for led pulse signal.</para>
+            <para>The generation start can be delayed to a specified DateTime to synchronize multiple signals.</para>
+            <para>Note that only one toggle can occur at a time for all signals. Toggles can not be closer than about 6.5µs on STM32F4.</para>
+            <para>The signal is stopped if it is too fast to be properly generated (<see cref="P:Community.Hardware.SignalGenerator.Status"/> is set to Error)</para>
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.StartNew(Microsoft.SPOT.Hardware.Cpu.Pin,System.Double,System.Int32,System.Double)">
+             <summary>
+             Create a new <see cref="T:Community.Hardware.SignalGenerator"/> generating a signal at the specified frequency with the specified duty cycle.
+             <para>The signal is stopped when the returned object is disposed. You must store a reference to the returned object to keep the signal generating.</para>
+             <para>Note that PWM is far more powerful as a simple frequency generator with no repeat count.</para>
+             </summary>
+             <param name="pin">Output pin</param>
+             <param name="frequency">Signal frequency (Hz) (1 to 50000)</param>
+            <param name="repeatCount">The repeat count, 0 for never ending</param>
+             <param name="dutyCycle">Duty cycle in range 0.0 to 1.0 (excluded)</param>
+             <returns></returns>
+             <exception cref="T:System.ArgumentOutOfRangeException">frequency is greater than 50kHz or dutyCycle lead to a level time less than 5µs</exception>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.StartNewLedPulse(Microsoft.SPOT.Hardware.Cpu.Pin,System.Int32,System.Int32,System.Double)">
+            <summary>
+            Create a new <see cref="T:Community.Hardware.SignalGenerator"/> repeating the specified number of pulses. This is designed to show a numerical information with a simple led. 
+            <para>Note that the signal is stopped when the returned object is disposed. You must store a reference to the returned object to keep the signal generating.</para>
+            </summary>
+            <param name="pin"></param>
+            <param name="pulseCount">The number of pulses</param>
+            <param name="burstInterval">Number of pulse period to separate the pulse bursts</param>
+            <param name="pulsePeriod">Pulse period in seconds</param>
+            <returns></returns>
+        </member>
+        <member name="F:Community.Hardware.SignalGenerator._signalInfo">
+            <summary>
+            Memory space used by native code
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.#ctor(Microsoft.SPOT.Hardware.Cpu.Pin,System.Boolean)">
+            <summary>
+            Initialize a new instance of <see cref="T:Community.Hardware.SignalGenerator"/> for the specified pin
+            </summary>
+            <param name="pin">Output pin</param>
+            <param name="invert">Initial state applied to <paramref name="pin"/> when configured for output.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown if the specified pin is already reserved by another task</exception>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.Dispose">
+            <summary>
+            Release the output pin and native resources
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.Start">
+            <summary>
+            Start the signal generation. The signal is repeated until <see cref="M:Community.Hardware.SignalGenerator.Stop"/> or <see cref="M:Community.Hardware.SignalGenerator.Dispose"/>
+            <para>The signal pattern is specified by <see cref="P:Community.Hardware.SignalGenerator.LevelTimes"/> array.</para>
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.Start(System.DateTime)">
+            <summary>
+            Start the signal generation at the specified time. The signal is repeated until <see cref="M:Community.Hardware.SignalGenerator.Stop"/> or <see cref="M:Community.Hardware.SignalGenerator.Dispose"/>
+            <para>The signal pattern is specified by <see cref="P:Community.Hardware.SignalGenerator.LevelTimes"/> array.</para>
+            </summary>
+            <param name="startTime">The signal start time (any value lower than DateTime.Now will start immediately)</param>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.Start(System.Int32)">
+             <summary>
+             Start the signal generation for the specified repeat count.
+             <para>The signal pattern is specified by <see cref="P:Community.Hardware.SignalGenerator.LevelTimes"/> array.</para>
+             </summary>
+            <param name="repeatCount">The repeat count, 0 for never ending</param>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.Start(System.Int32,System.Double,System.Double)">
+             <summary>
+             Start the signal generation with specified repetition count and optional carrier modulation.
+             <para>The signal pattern is specified by <see cref="P:Community.Hardware.SignalGenerator.LevelTimes"/> array.</para>
+             </summary>
+            <param name="repeatCount">The repeat count, 0 for never ending</param>
+             <param name="carrierFrequency">The carrier frequency (Hz) modulated by the signal, 0 if not used</param>
+             <param name="carrierDutyCycle">The carrier duty cycle in range 0.0, 1.0 (excluded)</param>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.Start(System.DateTime,System.Int32,System.Double,System.Double)">
+             <summary>
+             Start the signal generation at specified time with specified repetition count and optional carrier modulation.
+             <para>The signal pattern is specified by <see cref="P:Community.Hardware.SignalGenerator.LevelTimes"/> array.</para>
+             </summary>
+             <param name="startTime">The signal start time (any value lower than DateTime.Now will start immediately)</param>
+            <param name="repeatCount">The repeat count, 0 for never ending</param>
+             <param name="carrierFrequency">The carrier frequency (Hz) modulated by the signal, 0 if not used</param>
+             <param name="carrierDutyCycle">The carrier duty cycle in range 0.0, 1.0 (excluded)</param>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.Stop">
+            <summary>
+            Stops the signal generation
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.SignalGenerator.ToString">
+            <summary>
+            Gets the string representation for this instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Community.Hardware.SignalGenerator.Pin">
+            <summary>
+            Gets the output pin
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.SignalGenerator.Invert">
+            <summary>
+            Indicates wheter the output is inverted or not.
+            <para>When inverted, the first signal level is low and the modulation applies on low levels.</para>
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.SignalGenerator.RepeatCount">
+            <summary>
+            Gets the signal repeat decounter. Returns the repeat remaining count, including the currently generating signal.
+            <para>Returns 0 if signal generation is ended</para>
+            <para>For never ending signal, count down from 0 and roll over endlessly</para>
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.SignalGenerator.LevelTimeIndex">
+            <summary>
+            Gets the current signal generation index.
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.SignalGenerator.Status">
+            <summary>
+            Indicates the signal generation status
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.SignalGenerator.LevelTimes">
+            <summary>
+            Level times for signal generation (in µs).
+            <para>The signal start by a high level and then toggle after each specified level time.</para>
+            <para>The first level is low if <see cref="P:Community.Hardware.SignalGenerator.Invert"/> is <c>true</c>.</para>
+            <para>Any array value can be changed on the fly when the signal is generating (but not the array itself).</para>
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown if signal is started.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if array length is less than 2.</exception>
+        </member>
+        <member name="P:Community.Hardware.SignalGenerator.PinState">
+            <summary>
+            Gets or set the pin state
+            </summary>
+        </member>
+        <member name="T:Community.Hardware.SignalGenerator.SignalStatus">
+            <summary>
+            SignalGenerator status
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SignalGenerator.SignalStatus.Uninitialized">
+            <summary>
+            Signal pattern is not set (<see cref="P:Community.Hardware.SignalGenerator.LevelTimes"/> is <c>null</c>)
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SignalGenerator.SignalStatus.Ready">
+            <summary>
+            Signal is ready to start
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SignalGenerator.SignalStatus.Active">
+            <summary>
+            Signal is currently generating
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SignalGenerator.SignalStatus.Pending">
+            <summary>
+            Signal is waiting for start time (delayed start)
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SignalGenerator.SignalStatus.Error">
+            <summary>
+            Signal is too fast to be generated properly. Generation is cancelled.
+            </summary>
+        </member>
+    </members>
+</doc>

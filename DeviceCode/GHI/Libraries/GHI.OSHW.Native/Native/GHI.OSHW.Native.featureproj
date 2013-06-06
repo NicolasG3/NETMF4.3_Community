@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FeatureName>GHI.OSHW.Native</FeatureName>
+    <Guid>{8c5379c7-5486-4ed8-b786-0f2f6bced720}</Guid>
+    <Description>GHI open source Native features</Description>
+    <Groups />
+  </PropertyGroup>
+  <ItemGroup>
+    <DriverLibs Include="GHI_OSHW_Native.$(LIB_EXT)" />
+    <InteropFeature Include="GHI_OSHW_Native" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\GHI\Libraries\GHI.OSHW.Native\Managed\stubs\dotnetmf.proj" />
+  </ItemGroup>
+</Project>

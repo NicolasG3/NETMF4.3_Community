@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Community_System.cpp" />
+    <ClCompile Include="Community_System_Community_System_BitConverter.cpp" />
+    <ClCompile Include="Community_System_Community_System_BitConverter_mshl.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Community_System.h" />
+    <ClInclude Include="Community_System_Community_System_BitConverter.h" />
+  </ItemGroup>
+</Project>

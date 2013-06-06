@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Community.System</name>
+    </assembly>
+    <members>
+        <member name="T:Community.System.BitConverter">
+            <summary>
+            Converts base data types to an array of bytes, and an array of bytes to base data types.
+            </summary>
+        </member>
+        <member name="F:Community.System.BitConverter.IsLittleEndian">
+            <summary>
+            Indicates the byte order ("endianness") in which data is stored in this computer architecture.
+            </summary>
+        </member>
+        <member name="M:Community.System.BitConverter.DoubleToInt64Bits(System.Double)">
+            <summary>
+            Converts the specified double-precision floating point number to a 64-bit signed integer.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.Int64BitsToDouble(System.Int64)">
+            <summary>
+            Converts the specified 64-bit signed integer to a double-precision floating point number.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.GetBytes(System.Boolean)">
+            <summary>
+            Returns the specified Boolean value as an array of bytes.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.GetBytes(System.Char)">
+            <summary>
+            Returns the specified Unicode character value as an array of bytes.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.GetBytes(System.Int16)">
+            <summary>
+            Returns the specified 16-bit signed integer value as an array of bytes.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.GetBytes(System.Int32)">
+            <summary>
+            Returns the specified 32-bit signed integer value as an array of bytes.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.GetBytes(System.Int64)">
+            <summary>
+            Returns the specified 64-bit signed integer value as an array of bytes.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.GetBytes(System.Single)">
+            <summary>
+            Returns the specified single-precision floating point value as an array of bytes.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.GetBytes(System.Double)">
+            <summary>
+            Returns the specified double-precision floating point value as an array of bytes.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.SetBytes(System.Int16,System.Byte[],System.Int32)">
+            <summary>
+            Set two bytes at a specified position in a byte array with the specified 16-bit signed integer value
+            </summary>
+            <param name="value"></param>
+            <param name="buffer"></param>
+            <param name="startIndex"></param>
+        </member>
+        <member name="M:Community.System.BitConverter.SetBytes(System.Int32,System.Byte[],System.Int32)">
+            <summary>
+            Set four bytes at a specified position in a byte array with the specified 32-bit signed integer value
+            </summary>
+            <param name="value"></param>
+            <param name="buffer"></param>
+            <param name="startIndex"></param>
+        </member>
+        <member name="M:Community.System.BitConverter.SetBytes(System.Int64,System.Byte[],System.Int32)">
+            <summary>
+            Set eight bytes at a specified position in a byte array with the specified 64-bit signed integer value
+            </summary>
+            <param name="value"></param>
+            <param name="buffer"></param>
+            <param name="startIndex"></param>
+        </member>
+        <member name="M:Community.System.BitConverter.SetBytes(System.Single,System.Byte[],System.Int32)">
+            <summary>
+            Set four bytes at a specified position in a byte array with the specified single-precision floating point value
+            </summary>
+            <param name="value"></param>
+            <param name="buffer"></param>
+            <param name="startIndex"></param>
+        </member>
+        <member name="M:Community.System.BitConverter.SetBytes(System.Double,System.Byte[],System.Int32)">
+            <summary>
+            Set eight bytes at a specified position in a byte array with the specified double-precision floating point value
+            </summary>
+            <param name="value"></param>
+            <param name="buffer"></param>
+            <param name="startIndex"></param>
+        </member>
+        <member name="M:Community.System.BitConverter.GetBytes(System.UInt16)">
+            <summary>
+            Returns the specified 16-bit unsigned integer value as an array of bytes.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.GetBytes(System.UInt32)">
+            <summary>
+            Returns the specified 32-bit unsigned integer value as an array of bytes.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.GetBytes(System.UInt64)">
+            <summary>
+            Returns the specified 64-bit unsigned integer value as an array of bytes.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToBoolean(System.Byte[],System.Int32)">
+            <summary>
+            Returns a Boolean value converted from one byte at a specified position in a byte array.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToChar(System.Byte[],System.Int32)">
+            <summary>
+            Returns a Unicode character converted from two bytes at a specified position in a byte array.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToSingle(System.Byte[],System.Int32)">
+            <summary>
+            Returns a single-precision floating point number converted from four bytes at a specified position in a byte array.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToDouble(System.Byte[],System.Int32)">
+            <summary>
+            Returns a double-precision floating point number converted from eight bytes at a specified position in a byte array.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToInt16(System.Byte[],System.Int32)">
+            <summary>
+            Returns a 16-bit signed integer converted from two bytes at a specified position in a byte array.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToInt32(System.Byte[],System.Int32)">
+            <summary>
+            Returns a 32-bit signed integer converted from four bytes at a specified position in a byte array.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToInt64(System.Byte[],System.Int32)">
+            <summary>
+            Returns a 64-bit signed integer converted from eight bytes at a specified position in a byte array.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToUInt16(System.Byte[],System.Int32)">
+            <summary>
+            Returns a 16-bit unsigned integer converted from two bytes at a specified position in a byte array.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToUInt32(System.Byte[],System.Int32)">
+            <summary>
+            Returns a 32-bit unsigned integer converted from four bytes at a specified position in a byte array.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToUInt64(System.Byte[],System.Int32)">
+            <summary>
+            Returns a 64-bit unsigned integer converted from eight bytes at a specified position in a byte array.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToString(System.Byte[])">
+            <summary>
+            Converts the numeric value of each element of a specified array of bytes to its equivalent hexadecimal string representation.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToString(System.Byte[],System.Int32)">
+            <summary>
+            Converts the numeric value of each element of a specified subarray of bytes to its equivalent hexadecimal string representation.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.System.BitConverter.ToString(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Converts the numeric value of each element of a specified subarray of bytes to its equivalent hexadecimal string representation.
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

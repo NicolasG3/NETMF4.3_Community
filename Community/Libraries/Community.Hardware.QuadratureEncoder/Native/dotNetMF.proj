@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Directory>Community\Community_Hardware_QuadratureEncoder</Directory>
+    <AssemblyName>Community_Hardware_QuadratureEncoder</AssemblyName>
+    <Description>Quadrature encoder interop library</Description>
+    <Level>HAL</Level>
+    <Groups>Hardware</Groups>
+    <LibraryCategory>
+      <MFComponent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Community_Hardware_QED" Guid="{4A034338-0C8A-45FF-BD61-585757698821}" ProjectPath="$(SPOCLIENT)\Community\Features\Community_hardware_QED.libcatproj" Conditional="" xmlns="">
+        <VersionDependency xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <Major>4</Major>
+          <Minor>0</Minor>
+          <Revision>0</Revision>
+          <Build>0</Build>
+          <Extra />
+          <Date>2013-05-13</Date>
+          <Author>NG</Author>
+        </VersionDependency>
+        <ComponentType xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">LibraryCategory</ComponentType>
+      </MFComponent>
+    </LibraryCategory>
+    <HasLibraryCategory>True</HasLibraryCategory>
+    <Required>False</Required>
+    <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
+    <PlatformIndependent>True</PlatformIndependent>
+    <PlatformIndependentBuild>True</PlatformIndependentBuild>
+    <IsStub>False</IsStub>
+    <IsSolutionWizardVisible>True</IsSolutionWizardVisible>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <HFile Include="Community_Hardware_QuadratureEncoder.h" />
+    <Compile Include="Community_Hardware_QuadratureEncoder.cpp" />
+    <Compile Include="Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder_mshl.cpp" />
+    <HFile Include="Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder.h" />
+    <Compile Include="Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder.cpp" />
+  </ItemGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>

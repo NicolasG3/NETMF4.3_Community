@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FeatureName>Settings</FeatureName>
+    <Guid>{a0e50716-0126-4867-b13a-c4b9b8592abd}</Guid>
+    <Description>System persistent settings access</Description>
+    <Groups />
+    <COMMUNITY_HARDWARE_SETTINGS_FEATUREPROJ>True</COMMUNITY_HARDWARE_SETTINGS_FEATUREPROJ>
+  </PropertyGroup>
+  <ItemGroup>
+    <DriverLibs Include="Community_Hardware_Settings.$(LIB_EXT)" />
+    <InteropFeature Include="Community_Hardware_Settings" />
+    <RequiredProjects Include="$(SPOCLIENT)\Community\Libraries\Community.Hardware.Settings\Native\dotnetmf.proj" />
+  </ItemGroup>
+  <Import Condition="'$(COMMUNITY_HARDWARE_LIBCATPROJ)'==''" Project="$(SPOCLIENT)\Community\Features\Community_Hardware.libcatproj" />
+</Project>

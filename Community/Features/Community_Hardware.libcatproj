@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <COMMUNITY_HARDWARE_LIBCATPROJ>True</COMMUNITY_HARDWARE_LIBCATPROJ>
+    <PKUI_LibraryCategory>
+      <LibraryCategory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="">
+        <Name xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">Community_Hardware</Name>
+        <Guid xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">{4A034338-0C8A-45FF-BD61-585757698821}</Guid>
+        <Description xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd" />
+        <Level xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">HAL</Level>
+        <Groups xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd" />
+        <Documentation xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd" />
+        <Version xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <Major>4</Major>
+          <Minor>0</Minor>
+          <Revision>0</Revision>
+          <Build>0</Build>
+          <Extra />
+          <Date>2013-05-13</Date>
+          <Author>NG</Author>
+        </Version>
+        <Required xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">true</Required>
+        <IgnoreDefaultLibPath xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">false</IgnoreDefaultLibPath>
+        <ProjectPath xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">$(SPOCLIENT)\Community\Features\Community_Hardware.libcatproj</ProjectPath>
+        <FeatureAssociations Name="QuadratureEncoder" Guid="{5a24bac6-a315-4b32-8b95-834155a26757}" ProjectPath="$(SPOCLIENT)\Community\Features\QuadratureEncoder.featureproj" Conditional="" xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <VersionDependency>
+            <Major>4</Major>
+            <Minor>3</Minor>
+            <Revision>0</Revision>
+            <Build>0</Build>
+            <Extra />
+            <Date>2013-05-13</Date>
+            <Author>NG</Author>
+          </VersionDependency>
+          <ComponentType>Feature</ComponentType>
+        </FeatureAssociations>
+        <FeatureAssociations Name="SignalGenerator" Guid="{c58d2cc6-51a4-4164-9ff2-a557f0117974}" ProjectPath="$(SPOCLIENT)\Community\Features\SignalGenerator.featureproj" Conditional="" xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <VersionDependency>
+            <Major>4</Major>
+            <Minor>3</Minor>
+            <Revision>0</Revision>
+            <Build>0</Build>
+            <Extra />
+            <Date>2013-05-13</Date>
+            <Author>NG</Author>
+          </VersionDependency>
+          <ComponentType>Feature</ComponentType>
+        </FeatureAssociations>
+        <FeatureAssociations Name="System" Guid="{a0e50716-0126-4867-b13a-c4b9b8592abd}" ProjectPath="$(SPOCLIENT)\Community\Features\System.featureproj" Conditional="" xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <VersionDependency>
+            <Major>4</Major>
+            <Minor>3</Minor>
+            <Revision>0</Revision>
+            <Build>0</Build>
+            <Extra />
+            <Date>2013-05-13</Date>
+            <Author>NG</Author>
+          </VersionDependency>
+          <ComponentType>Feature</ComponentType>
+        </FeatureAssociations>
+        <IsTransport xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">false</IsTransport>
+      </LibraryCategory>
+    </PKUI_LibraryCategory>
+  </PropertyGroup>
+  <ItemGroup>
+    <LibraryCollection Include="$(SPOCLIENT)\Community\Libraries\Community.Hardware.QuadratureEncoder\Native\dotNetMF.proj" />
+    <LibraryCollection Include="$(SPOCLIENT)\Community\Libraries\Community.Hardware.SignalGenerator\Native\dotNetMF.proj" />
+    <LibraryCollection Include="$(SPOCLIENT)\Community\Libraries\Community.Hardware.System\Native\dotNetMF.proj" />
+  </ItemGroup>
+</Project>

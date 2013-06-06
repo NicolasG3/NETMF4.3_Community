@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FeatureName>SignalGenerator</FeatureName>
+    <Guid>{c58d2cc6-51a4-4164-9ff2-a557f0117974}</Guid>
+    <Description>Signal generator - platform independant</Description>
+    <Groups />
+    <COMMUNITY_HARDWARE_SIGNALGENERATOR_FEATUREPROJ>True</COMMUNITY_HARDWARE_SIGNALGENERATOR_FEATUREPROJ>
+  </PropertyGroup>
+  <ItemGroup>
+    <PlatformIndependentLibs Include="Community_Hardware_SignalGenerator.$(LIB_EXT)" />
+    <InteropFeature Include="Community_Hardware_SignalGenerator" />
+    <RequiredProjects Include="$(SPOCLIENT)\Community\Libraries\Community.Hardware.SignalGenerator\Native\dotnetmf.proj" />
+  </ItemGroup>
+  <Import Condition="'$(COMMUNITY_HARDWARE_LIBCATPROJ)'==''" Project="$(SPOCLIENT)\Community\Features\Community_Hardware.libcatproj" />
+</Project>

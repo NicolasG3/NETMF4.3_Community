@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FeatureName>Community.System</FeatureName>
+    <Guid>{123e9366-641b-4acd-a40c-ebc650ff8d52}</Guid>
+    <Description>Community system</Description>
+    <Groups />
+    <COMMUNITY_SYSTEM_FEATUREPROJ>True</COMMUNITY_SYSTEM_FEATUREPROJ>
+  </PropertyGroup>
+  <ItemGroup>
+    <PlatformIndependentLibs Include="Community_System.$(LIB_EXT)" />
+    <InteropFeature Include="Community_System" />
+    <RequiredProjects Include="$(SPOCLIENT)\Community\Libraries\Community.System\Native\dotnetmf.proj" />
+  </ItemGroup>
+  <Import Condition="'$(COMMUNITY_HARDWARE_LIBCATPROJ)'==''"  Project="$(SPOCLIENT)\Community\Features\Community_Hardware.libcatproj" />
+</Project>

@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Community.Hardware.Settings</name>
+    </assembly>
+    <members>
+        <member name="T:Community.Hardware.SystemSettings">
+            <summary>
+            Extended system settings
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.SystemSettings.SetDebugInterface(Community.Hardware.SystemSettings.Port)">
+            <summary>
+            Set the debug interface to the specified port and restart.
+            <para>No operation if the specified port is already used as debug interface.</para>
+            </summary>
+            <param name="port">The new debug interface port</param>
+            <example>
+            //Use COM3 debug interface when then PA9 pin is tied to ground
+            InputPort debugPort = new InputPort(FEZCerberus.Pin.PA9, false, Port.ResistorMode.PullUp);
+            if (debugPort.Read()) {
+                //Restore the default debug interface if the pin is left unconnected
+                SystemSettings.SetDebugInterface(Settings.Port.USB1);
+                }
+            else
+                SystemSettings.SetDebugInterface(SystemConfig.Port.COM3);
+            </example>
+        </member>
+        <member name="M:Community.Hardware.SystemSettings.WriteConfigBlock(System.String,System.Byte[])">
+            <summary>
+            Create or update a user configuration block in flash memory 
+            <para>The data buffer size must be constant for the specified name</para>
+            </summary>
+            <param name="name">Unique config ID (63 characters max)</param>
+            <param name="data">Data buffer</param>
+            <returns></returns>
+        </member>
+        <member name="M:Community.Hardware.SystemSettings.ReadConfigBlock(System.String,System.Byte[])">
+            <summary>
+            Read a user configuration block in flash memory
+            <para>The data buffer size must be constant for the specified name</para>
+            </summary>
+            <param name="name">Unique config ID (63 characters max)</param>
+            <param name="data">Data buffer to update</param>
+            <returns></returns>
+        </member>
+        <member name="P:Community.Hardware.SystemSettings.DebugInterface">
+            <summary>
+            Gets the current debug Interface
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.SystemSettings.HardwareSerial">
+            <summary>
+            Gets the hardware unique serial ID (16 bytes)
+            <para>This array can be use to vreate a <see cref="T:System.Guid"/></para>
+            </summary>
+        </member>
+        <member name="T:Community.Hardware.SystemSettings.Port">
+            <summary>
+            Hardware communication ports
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.COM1">
+            <summary>
+            Serial port 1
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.COM2">
+            <summary>
+            Serial port 2
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.COM3">
+            <summary>
+            Serial port 3
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.COM4">
+            <summary>
+            Serial port 4
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.COM5">
+            <summary>
+            Serial port 5
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.COM6">
+            <summary>
+            Serial port 6
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.USB1">
+            <summary>
+            USB port 1
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.USB2">
+            <summary>
+            USB port 2
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.Sockets1">
+            <summary>
+            Ethernet port 1
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.SystemSettings.Port.Sockets2">
+            <summary>
+            Ethernet port 2
+            </summary>
+        </member>
+        <member name="T:Community.Hardware.UserSettings">
+            <summary>
+            User configuration data.
+            <para>This class is a container for persistent data stored in flash memory (NETMF config block).</para>
+            </summary>
+            <example>
+            //save a text in the persistent user config
+            String text = "Test user config";
+            byte[] textBytes = Encoding.UTF8.GetBytes(text);
+            textBytes.CopyTo(UserSettings.Default.Data, 0);
+            UserConfig.Default.Save();
+            //read a text from the persistent user config
+            String text2 = new String(Encoding.UTF8.GetChars(UserSettings.Default.Data));
+            </example>
+        </member>
+        <member name="M:Community.Hardware.UserSettings.#ctor(System.String,System.Int32)">
+            <summary>
+            Initialize a new instance of <see cref="T:Community.Hardware.UserSettings"/>
+            <para>Note to implementers: do not change Size when a config block is already existing in flash. Erase the flash and restore the firmware to delete existing config blocks.</para>
+            </summary>
+            <param name="name">Unique name for config block (63 characters max)</param>
+            <param name="size">Config block size (bytes)</param>
+        </member>
+        <member name="M:Community.Hardware.UserSettings.ToString">
+            <summary>
+            Gets the config Name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Community.Hardware.UserSettings.Save">
+            <summary>
+            Save the configuration data to flash memory
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Community.Hardware.UserSettings.Load">
+            <summary>
+            Load the configuration data from flash memory
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Community.Hardware.UserSettings.Default">
+            <summary>
+            Get the default <see cref="T:Community.Hardware.UserSettings"/>
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.UserSettings.Name">
+            <summary>
+            Gets the configuration unique identifier
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.UserSettings.Data">
+            <summary>
+            Gets the configuration data
+            </summary>
+        </member>
+    </members>
+</doc>

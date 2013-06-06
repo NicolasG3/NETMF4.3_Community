@@ -1,0 +1,73 @@
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>STM32F4_QuadratureEncoder</AssemblyName>
+    <ProjectGuid>{62566C45-C7D0-4C0D-8817-CF9649735DA2}</ProjectGuid>
+    <Size>
+    </Size>
+    <Description>Quadrature encoder library for STM32F4</Description>
+    <Level>HAL</Level>
+    <LibraryFile>STM32F4_QuadratureEncoder.$(LIB_EXT)</LibraryFile>
+    <ProjectPath>$(SPOCLIENT)\Community\Targets\STM32F4\STM32F4_QuadratureEncoder\dotNetMF.proj</ProjectPath>
+    <ManifestFile>STM32F4_QuadratureEncoder.$(LIB_EXT).manifest</ManifestFile>
+    <Groups>Processor\STM32F4</Groups>
+    <Documentation>
+    </Documentation>
+    <PlatformIndependent>False</PlatformIndependent>
+    <CustomFilter>
+    </CustomFilter>
+    <Required>False</Required>
+    <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
+    <IsStub>False</IsStub>
+    <LibraryCategory>
+      <MFComponent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Community_Hardware_QED" Guid="{4A034338-0C8A-45FF-BD61-585757698821}" ProjectPath="$(SPOCLIENT)\Community\Features\Community_hardware_QED.libcatproj" Conditional="" xmlns="">
+        <VersionDependency xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <Major>4</Major>
+          <Minor>0</Minor>
+          <Revision>0</Revision>
+          <Build>0</Build>
+          <Extra />
+          <Date>2013-05-13</Date>
+          <Author>NG</Author>
+        </VersionDependency>
+        <ComponentType xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">LibraryCategory</ComponentType>
+      </MFComponent>
+    </LibraryCategory>
+    <ProcessorSpecific>
+		<MFComponent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="STM32F2" Guid="{002E00B2-009B-0009-B2F8-127FE8E839D1}" xmlns="">
+        <VersionDependency xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <Major>4</Major>
+          <Minor>0</Minor>
+          <Revision>0</Revision>
+          <Build>0</Build>
+          <Extra />
+          <Date>2009-04-30</Date>
+          <Author>Oberon microsystems, Inc.</Author>
+        </VersionDependency>
+        <ComponentType xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">Processor</ComponentType>
+		</MFComponent>
+	</ProcessorSpecific>
+	<ProcessorSpecific>  
+		<MFComponent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="STM32F4" Guid="{007400A6-0088-008A-A158-3C166CD3322C}" xmlns="">
+        <VersionDependency xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <Major>4</Major>
+          <Minor>0</Minor>
+          <Revision>0</Revision>
+          <Build>0</Build>
+          <Extra />
+          <Date>2009-04-30</Date>
+          <Author>Oberon microsystems, Inc.</Author>
+        </VersionDependency>
+        <ComponentType xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">Processor</ComponentType>
+      </MFComponent>
+    </ProcessorSpecific>
+    <Directory>Community\Targets\STM32F4\STM32F4_QuadratureEncoder</Directory>
+    <OutputType>Library</OutputType>
+    <PlatformIndependentBuild>false</PlatformIndependentBuild>
+    <Version>4.0.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="STM32F4_QuadratureEncoder_functions.cpp" />
+  </ItemGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>
