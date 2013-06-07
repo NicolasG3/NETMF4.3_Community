@@ -13,6 +13,7 @@
             <summary>
             Set the debug interface to the specified port and restart.
             <para>No operation if the specified port is already used as debug interface.</para>
+            <para>Note that the debug interface must be the same in your Visual Studio project properties</para>
             </summary>
             <param name="port">The new debug interface port</param>
             <example>
@@ -24,6 +25,8 @@
                 }
             else
                 SystemSettings.SetDebugInterface(SystemConfig.Port.COM3);
+            //Configure USB client for your own use and debug on COM3
+            //...
             </example>
         </member>
         <member name="M:Community.Hardware.SystemSettings.WriteConfigBlock(System.String,System.Byte[])">
@@ -117,17 +120,24 @@
         </member>
         <member name="T:Community.Hardware.UserSettings">
             <summary>
-            User configuration data.
+            User persistent data.
             <para>This class is a container for persistent data stored in flash memory (NETMF config block).</para>
             </summary>
             <example>
-            //save a text in the persistent user config
-            String text = "Test user config";
-            byte[] textBytes = Encoding.UTF8.GetBytes(text);
-            textBytes.CopyTo(UserSettings.Default.Data, 0);
-            UserConfig.Default.Save();
-            //read a text from the persistent user config
-            String text2 = new String(Encoding.UTF8.GetChars(UserSettings.Default.Data));
+            //Get user persistent settings
+            byte byteValue = UserSettings.Default.Data[0];
+            byte strLen = UserSettings.Default.Data[1];
+            String text = null;
+            if (strLen > 0) 
+                text = new String(Encoding.UTF8.GetChars(UserSettings.Default.Data, 2, strLen));
+            //update values and save
+            byteValue++;
+            UserSettings.Default.Data[0] = byteValue;
+            Byte[] bytes = Encoding.UTF8.GetBytes("Persistent text");
+            strLen = (byte)bytes.Length;    //assume the string is not larger than the UserSettings buffer
+            UserSettings.Default.Data[1] = strLen;
+            bytes.CopyTo(UserSettings.Default.Data, 2);
+            UserSettings.Default.Save();
             </example>
         </member>
         <member name="M:Community.Hardware.UserSettings.#ctor(System.String,System.Int32)">

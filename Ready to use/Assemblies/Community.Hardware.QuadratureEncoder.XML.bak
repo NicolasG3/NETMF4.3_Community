@@ -93,7 +93,7 @@
             </summary>
             <param name="IOIndex">Compare/Capture index</param>
             <param name="value">Compare value</param>
-            <param name="pulseLength">Output pulse length in µs (0 for infinite pulse)</param>
+            <param name="pulseLength">Output pulse length in µs (0 for shortest pulse, -1 for infinite pulse)</param>
             <param name="invert">Indicates to generate a negative pulse</param>
         </member>
         <member name="M:Community.Hardware.QuadratureEncoder.InitInputCapture(System.Int32,System.Boolean)">
