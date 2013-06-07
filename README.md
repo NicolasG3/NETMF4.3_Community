@@ -14,11 +14,11 @@ This solution is compiled with GCC V4.6 (GCC V4.7 is not compatible).
 
 ###Content
 ***
-Part of GHI open source code is modified to be compatible with NETMF 4.3 and the **FEZCerberus** class is completed to declare available hardware ports and channels.
+Part of GHI open source code is modified to be compatible with NETMF 4.3 and the **GHI.OSHW.FEZCerberus** class is completed to declare available hardware ports and channels.
 
 Community features are provided in specific assemblies:
 ####Community.Hardware.QuadratureEncoder.dll
-Quadrature encoder driver with output compare and input capture.
+Quadrature encoder hardware driver with output compare and input capture capability.
 The HAL driver is provided to allow implementation for other platforms. 
   
 ####Community.Hardware.SignalGenerator.dll
