@@ -3,7 +3,9 @@ This project allows the compilation of any STM32F4 solution with GCC 4.6.
 Porting NETMF 4.3 ont STM32F4 is thus totally free and open source.
 
 GCC compatibility was achieved to allow adding interop features in native code.  
-Those interop features are released here to the community.
+Those interop features are released here to the community.  
+  
+***Documentation can be found in the [wiki pages](https://github.com/NicolasG3/NETMF4.3_Community/wiki)***
 
 ###Usage
 ***
