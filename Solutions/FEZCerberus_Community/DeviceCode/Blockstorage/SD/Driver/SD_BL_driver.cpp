@@ -14,6 +14,7 @@
 #include "SD_BL.h"
 #include "stm32f4xx_sdio_sd.h"
 #include "stm32f4xx_sdio.h"
+#include "TinyCLR_Types.h"
 
 //--//
 
@@ -138,7 +139,7 @@ BOOL SD_BS_Driver::ChipInitialize(void *context)
 
     UINT32 C_SIZE;
 
-    UINT32 MemCapacity = 0; //total memory size, in unit of byte
+    UINT64 MemCapacity = 0; //total memory size, in unit of byte
 
     TAAC			= SDCardInfo.SD_csd.TAAC; // regCSD[1]; /* STM // Original */
     NSAC			= SDCardInfo.SD_csd.NSAC; // regCSD[2]; /* STM // Original */
@@ -177,11 +178,11 @@ BOOL SD_BS_Driver::ChipInitialize(void *context)
     //Update SD config according to CSD register
     UINT32 SectorsPerBlock    = (ERASE_BL_EN == TRUE) ? 1 : (SECTOR_SIZE + 1);
     pDevInfo->BytesPerSector  = 512; // data bytes per sector is always 512
-    pDevInfo->Size            = MemCapacity;
+	pDevInfo->Size            = (ByteAddress)MemCapacity;
 
     BlockRegionInfo* pRegions = (BlockRegionInfo*)&pDevInfo->Regions[0];
     pRegions[0].BytesPerBlock = SectorsPerBlock * pDevInfo->BytesPerSector;
-    pRegions[0].NumBlocks     = MemCapacity / pRegions[0].BytesPerBlock;
+    pRegions[0].NumBlocks     = (UINT32)(MemCapacity / pRegions[0].BytesPerBlock);
         
     BlockRange* pRanges   = (BlockRange*)&pRegions[0].BlockRanges[0];
 
@@ -230,7 +231,7 @@ BOOL SD_BS_Driver::Read(void *context, ByteAddress phyAddress, UINT32 NumBytes, 
 
         UINT32 offset = phyAddress - (StartSector * pConfig->BlockDeviceInformation->BytesPerSector);
 
-        UINT32 bytes  = (NumBytes + offset > BytesPerSector ? BytesPerSector - offset : NumBytes);
+       UINT32 bytes  = (NumBytes + offset > BytesPerSector ? BytesPerSector - offset : NumBytes);
 
 		while(NumBytes > 0)
         {

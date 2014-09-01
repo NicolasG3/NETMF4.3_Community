@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FeatureName>AnalogSignalGenerator</FeatureName>
+    <Guid>{ab9e03e4-6445-4fed-b3ac-67a125754a59}</Guid>
+    <Description>Analog signal generator</Description>
+    <Groups />
+    <COMMUNITY_HARDWARE_ANALOGSIGNALGENERATOR_FEATUREPROJ>True</COMMUNITY_HARDWARE_ANALOGSIGNALGENERATOR_FEATUREPROJ>
+  </PropertyGroup>
+  <ItemGroup>
+    <DriverLibs Include="Community_Hardware_AnalogSignalGenerator.$(LIB_EXT)" />
+    <InteropFeature Include="Community_Hardware_AnalogSignalGenerator" />
+    <RequiredProjects Include="$(SPOCLIENT)\Community\Libraries\Community.Hardware.AnalogSignalGenerator\Native\dotnetmf.proj" />
+  </ItemGroup>
+  <Import Condition="'$(COMMUNITY_HARDWARE_LIBCATPROJ)'==''"  Project="$(SPOCLIENT)\Community\Features\Community_Hardware.libcatproj" />
+</Project>

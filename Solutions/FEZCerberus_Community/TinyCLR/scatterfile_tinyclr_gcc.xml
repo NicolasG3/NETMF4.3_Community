@@ -36,7 +36,7 @@
     <Set Name="Config_BaseAddress"  Value="0x0800C000"/>
     <Set Name="Config_Size"         Value="0x00004000"/>
     <Set Name="Code_BaseAddress"    Value="0x08010000"/>
-    <Set Name="Deploy_BaseAddress"  Value="0x080A0000"/>
+    <Set Name="Deploy_BaseAddress"  Value="0x080E0000"/>
     <Set Name="Code_Size"           Value="%Deploy_BaseAddress - Code_BaseAddress%" />
     <Set Name="Valid"               Value="true"/>
   </If>

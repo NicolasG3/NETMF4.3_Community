@@ -73,7 +73,6 @@
     <ClCompile Include="Community_Hardware_QuadratureEncoder.cpp" />
     <ClCompile Include="Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder.cpp" />
     <ClCompile Include="Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder_mshl.cpp" />
-    <ClCompile Include="Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder_stub.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Include\QuadratureEncoder_decl.h" />

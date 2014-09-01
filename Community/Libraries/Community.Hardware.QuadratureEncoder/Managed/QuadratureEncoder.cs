@@ -94,7 +94,7 @@ namespace Community.Hardware
         /// Get the input pin for quadrature channel B
         /// </summary>
         public Cpu.Pin Pin_B {
-            get { return _pin_A; }
+            get { return _pin_B; }
             }
 
         private readonly CountMode _mode;
@@ -131,10 +131,10 @@ namespace Community.Hardware
         /// </summary>
         /// <param name="IOIndex">Compare/Capture index</param>
         /// <param name="value">Compare value</param>
-        /// <param name="pulseLength">Output pulse length in µs (0 for infinite pulse)</param>
         /// <param name="invert">Indicates to generate a negative pulse</param>
+        /// <param name="pulseLength">Output pulse length in µs (0 for infinite pulse)</param>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern void InitOutputCompare(int IOIndex, int value, int pulseLength = 100, bool invert = false);
+        public extern void InitOutputCompare(int IOIndex, int value, bool invert = false, int pulseLength = 100);
 
         /// <summary>
         /// Initialize the counter capture on the specified pin rising edgde
@@ -156,7 +156,7 @@ namespace Community.Hardware
         /// </summary>
         /// <returns></returns>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        private extern int GetQuadratureEncoderChannelCount();
+        static public extern int GetChannelCount();
         /// <summary>
         /// Get the input pins for the specified channel
         /// </summary>
@@ -165,7 +165,7 @@ namespace Community.Hardware
         /// <param name="B">B input pin</param>
         /// <returns></returns>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        private extern void GetQuadratureEncoderPinsForChannel(QuadratureEncoderChannel channel, out Cpu.Pin A, out Cpu.Pin B);
+        static public extern void GetQuadratureEncoderPinsForChannel(QuadratureEncoderChannel channel, out Cpu.Pin A, out Cpu.Pin B);
 
         /// <summary>
         /// Initialize hardware. Channel and Mode must be set before call.
@@ -188,7 +188,7 @@ namespace Community.Hardware
             //Do not use HardwareProvider to keep the feature independant :
             //no HardwareProvider.HwProvider.GetQuadratureEncoderChannelCount(); 
             //no HardwareProvider.HwProvider.GetQuadratureEncoderPinsForChannel(...); 
-            //If a solution doesn't need this feature, no stub is required
+            //-> if a solution doesn't need this feature, no stub is required
             _channel = channel;
             _mode = mode;
             GetQuadratureEncoderPinsForChannel(channel, out _pin_A, out _pin_B);

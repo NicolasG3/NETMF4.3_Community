@@ -167,7 +167,10 @@ int hal_snprintf_float( char* buffer, size_t len, const char* format, float f )
 	}
 	INT64   i = (INT64)f;
 	int pow=0;
-
+	//handle the precision (NG 2014)
+	bool isGeneralFormat = (format[3]=='g');
+	int precision = atoi(&format[2]);
+	//standard format
 	if((float)0x7FFFFFFFFFFFFFFFll < f || (float)(-0x7FFFFFFFFFFFFFFFll) > f)
 	{
 		while(f >= 10.0 || f <= -10.0)
@@ -182,7 +185,7 @@ int hal_snprintf_float( char* buffer, size_t len, const char* format, float f )
 
 		return hal_snprintf( buffer, len, "%d.%llue+%d", (int)f, (UINT64)dec, pow);
 	}
-	else if(f != 0.0 && (INT64)f == 0)
+	else if(f != 0.0 && (INT64)f == 0 && isGeneralFormat)
 	{
 		char zeros[32];
 
@@ -213,23 +216,33 @@ int hal_snprintf_float( char* buffer, size_t len, const char* format, float f )
 	}
 	else
 	{
-		INT64 i = (INT64)f;
-
-		f = f - (double)(INT64)f;
+		//custom format
+		f = f - (float)(INT64)f;
 		if(f < 0) f = -f;
-
-		//		f *= 1000000000ull;
-		//		return hal_snprintf( buffer, len, "%lld.%09llu", i, (UINT64)f);
-
-		//handle the precision (NG 2013)
-		// create the format string from the format parameter like "%.2f" or "%.12f"
+		// create the format string from the format parameter like "%.2f" or "%.5f"
 		char formatStr[50];
-		int precision = atoi(&format[2]);
+		char zeros[32];
+		zeros[0] = '\0';
 		if (f != 0) 
 		{
-			for (int i = 0; i<precision; i++)
-				f *= 10ull;
-			hal_snprintf( formatStr, ARRAYSIZE(formatStr), "%%lld.%%%dllu", precision); 
+			for (int i = 0; i<precision; i++) {
+				//f *= 10ull;
+				float val = f * 10ull;
+				if (val < (float)0x7FFFFFFFFFFFFFFFll)
+					f = val;
+				else 
+				{
+					int j;
+					for(j = 0; j < precision - i && j < ARRAYSIZE(zeros) - 1; j++)
+						zeros[j] = '0';
+					zeros[j] = '\0';
+					precision = i;
+					break;
+				}
+			}
+			//add 0.5 for rounding to nearest
+			f += 0.5f;
+			hal_snprintf( formatStr, ARRAYSIZE(formatStr), "%%lld.%%0%dllu%s", precision, zeros); 
 		}
 		else
 		{
@@ -256,8 +269,11 @@ int hal_snprintf_double( char* buffer, size_t len, const char* format, double d 
 
 	// GCC vsnprintf corrupts memory with floating point values 
 #if defined(__GNUC__)
+	INT64 i = (INT64)d;
 	int pow=0;
-
+	//handle the precision (NG 2014)
+	bool isGeneralFormat = (format[4]=='g');
+	int precision = atoi(&format[2]);
 	if((double)0x7FFFFFFFFFFFFFFFll < d || (double)(-0x7FFFFFFFFFFFFFFFll) > d)
 	{
 		while(d >= 10.0 || d <= -10.0)
@@ -272,7 +288,7 @@ int hal_snprintf_double( char* buffer, size_t len, const char* format, double d 
 
 		return hal_snprintf( buffer, len, "%d.%llue+%d", (int)d, (UINT64)dec, pow);
 	}
-	else if(d != 0.0 && (INT64)d == 0)
+	else if(d != 0.0 && (INT64)d == 0 && isGeneralFormat)
 	{
 		char zeros[32];
 
@@ -303,22 +319,33 @@ int hal_snprintf_double( char* buffer, size_t len, const char* format, double d 
 	}
 	else
 	{
-		INT64 i = (INT64)d;
-
+		//INT64 i = (INT64)d;
 		d = d - (double)(INT64)d;
 		if(d < 0) d = -d;
-		//d *= 100000000000000000ull;
-		//return hal_snprintf( buffer, len, "%lld.%017llu", i, (UINT64)d);
-
 		//handle the precision (NG 2013)
-		// create the format string from the format parameter like "%.2f" or "%.12f"
+		// create the format string from the format parameter like "%.2f" or "%.5f"
 		char formatStr[50];
-		int precision = atoi(&format[2]);
+		char zeros[32];
+		zeros[0] = '\0';
 		if (d != 0) 
 		{
-			for (int i = 0; i<precision; i++)
-				d *= 10ull;
-			hal_snprintf( formatStr, ARRAYSIZE(formatStr), "%%lld.%%%dllu", precision); 
+			for (int i = 0; i < precision; i++) {
+				double val = d * 10ull;
+				if (val < (double)0x7FFFFFFFFFFFFFFFll)
+					d = val;
+				else 
+				{
+					int j;
+					for(j = 0; j < precision - i && j < ARRAYSIZE(zeros) - 1; j++)
+						zeros[j] = '0';
+					zeros[j] = '\0';
+					precision = i;
+					break;
+				}
+			}
+			//add 0.5 for rounding to nearest
+			d += 0.5;
+			hal_snprintf( formatStr, ARRAYSIZE(formatStr), "%%lld.%%0%dllu%s", precision, zeros); 
 		}
 		else
 		{

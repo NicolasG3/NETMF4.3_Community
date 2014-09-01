@@ -9,10 +9,12 @@ Those interop features are released here to the community.
 
 ###Usage
 ***
-This code is intended to be merged to [NETMF 4.3 porting kit](http://netmf.codeplex.com/releases/view/81000) and [GHI's Open Source NETMF Ports](http://ghiopensource.codeplex.com/).
+This code is based on [NETMF 4.3 porting kit](http://netmf.codeplex.com/releases/view/81000) and [GHI's Open Source NETMF Ports](http://ghiopensource.codeplex.com/).
+The code is now to be merge with NETMF porting kit (merging GHI source code is no longer necessary)
 
-All features are implemented for STM32F4 and a custom solution for *FEZCerberus* is provided.
+All features are implemented for STM32F4 and a community solution for *FEZCerberus* is provided.
 This solution is compiled with GCC V4.6 (GCC V4.7 is not compatible).
+Command line scripts are provided to compile in one click.
 
 ###Content
 ***
@@ -32,6 +34,18 @@ HAL driver is provided for porting hardware serial to other platforms. Others fe
   
 ####Community.System.dll
 BitConverter class implementation.
+(Obsolete now in NETMF 4.3 QFE1)
+
+####Community.Hardware.AnalogSignalGenerator.dll (new)
+Generate an arbitrary analog signal using hardware DAC and DMA.
+
+####Community.Hardware.UsbHost.dll (new)
+USB Host for mass storage.
+
+####Community.Graphics.dll (new)
+Not functional. Attempt to create a progressive jpeg decoder for low RAM devices.
+The idea is to allow decoding a large image stored in SDCard to display it without having to store the whole image in microcontroller RAM.
+
   
 ###Ready to use binary
 ***

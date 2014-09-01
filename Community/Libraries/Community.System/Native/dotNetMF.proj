@@ -1,6 +1,6 @@
 <Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Directory>DeviceCode\Targets\Native\Interop\Community_System</Directory>
+    <Directory>Community\Community_System</Directory>
     <AssemblyName>Community_System</AssemblyName>
     <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
     <PlatformIndependent>True</PlatformIndependent>

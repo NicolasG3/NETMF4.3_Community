@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FeatureName>GHI.GameO</FeatureName>
+    <Guid>{53775f17-a7bc-4c16-8ee0-a53bf133c68c}</Guid>
+    <Description>&lt;Add Feature Description Here&gt;</Description>
+    <Groups />
+  </PropertyGroup>
+  <ItemGroup>
+    <DriverLibs Include="GHI_GameO.$(LIB_EXT)" />
+    <InteropFeature Include="GHI_GameO" />
+    <MMP_DAT_CreateDatabase Include="$(BUILD_TREE_CLIENT)\pe\$(ENDIANNESS)\GHI.GameO.pe" />
+    <RequiredProjects Include="C:\MicroFrameworkPK_v4_2\DeviceCode\GHI\Libraries\GHI.Gameo\Managed\Stubs\dotnetmf.proj" />
+  </ItemGroup>
+</Project>

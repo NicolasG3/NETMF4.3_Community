@@ -83,9 +83,9 @@ INT32 QuadratureEncoder::GetIOStatus( CLR_RT_HeapBlock* pMngObj, INT32 IOIndex, 
 	return ::QED_GetIOStatus(Get__channel(pMngObj), IOIndex);
 }
 
-void QuadratureEncoder::InitOutputCompare( CLR_RT_HeapBlock* pMngObj, INT32 IOIndex, INT32 value, INT32 pulseLength, INT8 invert, HRESULT &hr )
+void QuadratureEncoder::InitOutputCompare( CLR_RT_HeapBlock* pMngObj, INT32 IOIndex, INT32 value, INT8 invert, INT32 pulseLength, HRESULT &hr )
 {
-	hr = ::QED_InitOutputCompare(Get__channel(pMngObj), IOIndex,value, pulseLength, invert, QuadratureEncoderIOEvent);
+	hr = ::QED_InitOutputCompare(Get__channel(pMngObj), IOIndex, value, invert, pulseLength, QuadratureEncoderIOEvent);
 }
 
 void QuadratureEncoder::InitInputCapture( CLR_RT_HeapBlock* pMngObj, INT32 IOIndex, INT8 invert, HRESULT &hr )
@@ -98,14 +98,14 @@ void QuadratureEncoder::ReleaseIO( CLR_RT_HeapBlock* pMngObj, INT32 IOIndex, HRE
     ::QED_ReleaseIO(Get__channel(pMngObj), IOIndex);
 }
 
-INT32 QuadratureEncoder::GetQuadratureEncoderChannelCount( CLR_RT_HeapBlock* pMngObj, HRESULT &hr )
+INT32 QuadratureEncoder::GetChannelCount( HRESULT &hr )
 {
     return ::QED_ChannelCount();
 }
 
-void QuadratureEncoder::GetQuadratureEncoderPinsForChannel( CLR_RT_HeapBlock* pMngObj, INT32 channel, INT32 * pinA, INT32 * pinB, HRESULT &hr )
+void QuadratureEncoder::GetQuadratureEncoderPinsForChannel( INT32 channel, INT32 * pinA, INT32 * pinB, HRESULT &hr )
 {
-	hr = ::QED_GetPinsForChannel(channel, pinA, pinB);
+	hr = ::QED_GetPinsForChannel(channel, (GPIO_PIN*)pinA, (GPIO_PIN*)pinB);
 }
 
 void QuadratureEncoder::Initialize( CLR_RT_HeapBlock* pMngObj, HRESULT &hr )

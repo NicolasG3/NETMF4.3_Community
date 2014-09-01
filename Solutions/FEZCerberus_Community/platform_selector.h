@@ -28,7 +28,8 @@
 
 #define USB_ALLOW_CONFIGURATION_OVERRIDE  1
 
-#define RUNTIME_MEMORY_PROFILE__extrasmall 1
+#define RUNTIME_MEMORY_PROFILE__extrasmall
+//#define RUNTIME_MEMORY_PROFILE__medium
 
 
 //
@@ -70,6 +71,9 @@
 //
 // constants
 //
+
+//Scheduler minimum execution time
+#define THREAD_TIME_QUANTUM_MS	5
 
 // legal SYSCLK: 24, 30, 32, 36, 40, 42, 48, 54, 56, 60, 64, 72, 84, 96, 108, 120, 144, 168MHz
 #define SYSTEM_CLOCK_HZ                 168000000  // 168MHz

@@ -65,11 +65,13 @@
 
   <Import Project="$(SPOCLIENT)\Community\Features\QuadratureEncoder.featureproj" />
   <Import Project="$(SPOCLIENT)\Community\Features\SignalGenerator.featureproj" />
+  <Import Project="$(SPOCLIENT)\Community\Features\AnalogSignalGenerator.featureproj" />
   <Import Project="$(SPOCLIENT)\Community\Features\Settings.featureproj" />
   <Import Project="$(SPOCLIENT)\Community\Features\Community.System.featureproj" />
+  <Import Project="$(SPOCLIENT)\Community\Features\UsbHost.featureproj" />
 
   <Import Project="$(SPOCLIENT)\DeviceCode\GHI\Libraries\GHI.OSHW.Hardware\Native\GHI.OSHW.Hardware.featureproj" />
-  <Import Project="$(SPOCLIENT)\DeviceCode\GHI\Libraries\GHI.OSHW.Native\Native\GHI.OSHW.Native.featureproj" />
+  <!--<Import Project="$(SPOCLIENT)\DeviceCode\GHI\Libraries\GHI.OSHW.Native\Native\GHI.OSHW.Native.featureproj" />-->
 
   <!--<ItemGroup>
     <InteropFeature Include="GHI_OSHW_Native" />
@@ -83,15 +85,27 @@
     <DriverLibs Include="STM32F4_QuadratureEncoder.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\Community\Target\STM32F4\STM32F4_QuadratureEncoder\dotnetmf.proj" />
   </ItemGroup>
-  
+
   <!-- SignalGenerator platform lib ******************************************************************** -->
-    <!--None : Signal generator is platfom independent-->
-  
+  <!--None : Signal generator is platfom independent-->
+
+  <!-- AnalogSignalGenerator platform lib ******************************************************************** -->
+  <ItemGroup>
+    <DriverLibs Include="STM32F4_AnalogSignalGenerator.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\Community\Target\STM32F4\STM32F4_AnalogSignalGenerator\dotnetmf.proj" />
+  </ItemGroup>
+
   <!-- Settings platform lib ******************************************************************** -->
   <ItemGroup>
     <DriverLibs Include="STM32F4_HardwareSerial.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\Community\Target\STM32F4\STM32F4_HardwareSerial\dotnetmf.proj" />
   </ItemGroup>
+
+  <!-- UsbHost platform lib ******************************************************************** --><!--
+  <ItemGroup>
+    <DriverLibs Include="STM32F4_UsbHost.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\Community\Target\STM32F4\STM32F4_UsbHost\dotnetmf.proj" />
+  </ItemGroup>-->
 
   <!-- Added for SD Card ****************************************************************************************** -->
   <ItemGroup>
@@ -360,14 +374,14 @@
     <PlatformIndependentLibs Include="Graphics_Gif_stub.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\CLR\Graphics\GIF\dotNetMF_stub.proj" />
   </ItemGroup>
-  <ItemGroup>
+  <!--<ItemGroup>
     <PlatformIndependentLibs Include="Graphics_Jpeg_stub.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\CLR\Graphics\Jpeg\dotNetMF_stub.proj" />
-  </ItemGroup>
-  <!--<ItemGroup>
+  </ItemGroup>-->
+  <ItemGroup>
     <PlatformIndependentLibs Include="Graphics_Jpeg.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\CLR\Graphics\Jpeg\dotNetMF.proj" />
-  </ItemGroup>-->
+  </ItemGroup>
   <!-- ************************************************* -->
 
   <ItemGroup>

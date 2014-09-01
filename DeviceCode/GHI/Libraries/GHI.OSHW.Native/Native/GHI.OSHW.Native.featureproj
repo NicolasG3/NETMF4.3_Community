@@ -5,10 +5,11 @@
     <Guid>{8c5379c7-5486-4ed8-b786-0f2f6bced720}</Guid>
     <Description>GHI open source Native features</Description>
     <Groups />
+    <GHI_OSHW_NATIVE_FEATUREPROJ>True</GHI_OSHW_NATIVE_FEATUREPROJ>
   </PropertyGroup>
   <ItemGroup>
     <DriverLibs Include="GHI_OSHW_Native.$(LIB_EXT)" />
     <InteropFeature Include="GHI_OSHW_Native" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\GHI\Libraries\GHI.OSHW.Native\Managed\stubs\dotnetmf.proj" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\GHI\Libraries\GHI.OSHW.Native\Native\dotnetmf.proj" />
   </ItemGroup>
 </Project>

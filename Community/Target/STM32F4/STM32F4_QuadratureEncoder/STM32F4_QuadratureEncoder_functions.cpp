@@ -198,7 +198,7 @@ HRESULT	QED_Initialize		(int channel, int countMode) {
 //Unitialize the specified channel
 void	QED_Uninitialize	(int channel) {
 	if (channel !=0) 
-		return CLR_E_INVALID_PARAMETER;	
+		return;	
 	GLOBAL_LOCK(irq);
 	//disable counter and interrupt
 	QED_SetCountEnable(0, FALSE);
@@ -252,7 +252,7 @@ HRESULT	QED_SetCountEnable	(int channel, BOOL enable) {
 //Initialize the specified IO for output compare, negative pulse if invert is true
 //pulseLength=0 means infinite pulse
 //Reserve the IO pin and set the output state at first call, support successive calls (do not set the output state if not first call)
-HRESULT	QED_InitOutputCompare(int channel, int IOIndex, int value, int pulseLength, BOOL invert, QED_EVENT onOutputCompare) {
+HRESULT	QED_InitOutputCompare(int channel, int IOIndex, int value, BOOL invert, int pulseLength, QED_EVENT onOutputCompare) {
 	if (channel != 0)
 		return CLR_E_INVALID_PARAMETER;
 	if (IOIndex < 0 || IOIndex > 1)

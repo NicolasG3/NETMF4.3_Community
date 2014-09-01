@@ -23,17 +23,17 @@ struct Library_Community_Hardware_QuadratureEncoder_Community_Hardware_Quadratur
     TINYCLR_NATIVE_DECLARE(GetIOPinCount___I4);
     TINYCLR_NATIVE_DECLARE(GetIOPin___MicrosoftSPOTHardwareMicrosoftSPOTHardwareCpuPin__I4);
     TINYCLR_NATIVE_DECLARE(GetIOStatus___CommunityHardwareQuadratureEncoderIOStatus__I4);
-    TINYCLR_NATIVE_DECLARE(InitOutputCompare___VOID__I4__I4__I4__BOOLEAN);
+    TINYCLR_NATIVE_DECLARE(InitOutputCompare___VOID__I4__I4__BOOLEAN__I4);
     TINYCLR_NATIVE_DECLARE(InitInputCapture___VOID__I4__BOOLEAN);
     TINYCLR_NATIVE_DECLARE(ReleaseIO___VOID__I4);
-    TINYCLR_NATIVE_DECLARE(GetQuadratureEncoderChannelCount___I4);
-    TINYCLR_NATIVE_DECLARE(GetQuadratureEncoderPinsForChannel___VOID__CommunityHardwareQuadratureEncoderChannel__BYREF_MicrosoftSPOTHardwareMicrosoftSPOTHardwareCpuPin__BYREF_MicrosoftSPOTHardwareMicrosoftSPOTHardwareCpuPin);
     TINYCLR_NATIVE_DECLARE(Initialize___VOID);
     TINYCLR_NATIVE_DECLARE(Uninitialize___VOID);
     TINYCLR_NATIVE_DECLARE(get_Count___I4);
     TINYCLR_NATIVE_DECLARE(set_Count___VOID__I4);
     TINYCLR_NATIVE_DECLARE(get_CountEnabled___BOOLEAN);
     TINYCLR_NATIVE_DECLARE(set_CountEnabled___VOID__BOOLEAN);
+    TINYCLR_NATIVE_DECLARE(GetChannelCount___STATIC__I4);
+    TINYCLR_NATIVE_DECLARE(GetQuadratureEncoderPinsForChannel___STATIC__VOID__CommunityHardwareQuadratureEncoderChannel__BYREF_MicrosoftSPOTHardwareMicrosoftSPOTHardwareCpuPin__BYREF_MicrosoftSPOTHardwareMicrosoftSPOTHardwareCpuPin);
 
     //--//
 

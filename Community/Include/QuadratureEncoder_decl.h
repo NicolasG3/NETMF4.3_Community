@@ -51,7 +51,7 @@ HRESULT	QED_SetCountEnable	(int channel, BOOL enable);
 //Initialize the specified IO for output compare, negative pulse if invert is true
 //pulseLength=0 means infinite pulse
 //Reserve the IO pin and set the output state at first call, support successive calls (do not set the output state if not first call)
-HRESULT	QED_InitOutputCompare(int channel, int IOIndex, int value, int pulseLength, BOOL invert, QED_EVENT onOutputCompare);
+HRESULT	QED_InitOutputCompare(int channel, int IOIndex, int value, BOOL invert, int pulseLength, QED_EVENT onOutputCompare);
 //Initialize the specified IO for input capture on raising edge or falling edge if invert is true
 //Reserve the IO pin at first call
 HRESULT	QED_InitInputCapture(int channel, int IOIndex, BOOL invert, QED_EVENT onInputCapture);

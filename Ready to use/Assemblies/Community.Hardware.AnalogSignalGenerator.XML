@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Community.Hardware.AnalogSignalGenerator</name>
+    </assembly>
+    <members>
+        <member name="T:Community.Hardware.AnalogSignalGenerator">
+            <summary>
+            Generate an arbitrary analog signal using DAC.
+            <para>Note that the channel count may not be the same as <see cref="T:Microsoft.SPOT.Hardware.AnalogOutput"/></para>
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.AnalogSignalGenerator.GetChannelCount">
+            <summary>
+            Get the channel count for the hardware.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Community.Hardware.AnalogSignalGenerator.GetPin(Microsoft.SPOT.Hardware.Cpu.AnalogOutputChannel)">
+            <summary>
+            Get the output pin for the specified channel
+            </summary>
+            <param name="channel">Analog output channel</param>
+            <returns>The pin</returns>
+        </member>
+        <member name="M:Community.Hardware.AnalogSignalGenerator.GetMinClockDivisor">
+            <summary>
+            Get the minimum clock divisor applied to <see cref="P:Microsoft.SPOT.Hardware.Cpu.SystemClock"/> to define the max output sample for the hardware.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Community.Hardware.AnalogSignalGenerator._signalInfo">
+            <summary>
+            Memory space used by native code
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.AnalogSignalGenerator.#ctor(Microsoft.SPOT.Hardware.Cpu.AnalogOutputChannel,System.Int32)">
+            <summary>
+            Initialize a new instance of <see cref="T:Community.Hardware.AnalogSignalGenerator"/> for the specified channel
+            </summary>
+            <param name="channel">The analog output channel</param>
+            <param name="clockDivisor">The divisor applied to <see cref="P:Microsoft.SPOT.Hardware.Cpu.SlowClock"/> to define the sample clock</param>
+        </member>
+        <member name="M:Community.Hardware.AnalogSignalGenerator.Dispose">
+            <summary>
+            Dispose native resources
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.AnalogSignalGenerator.Start">
+            <summary>
+            Start the signal generation
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.AnalogSignalGenerator.Start(System.Int32)">
+             <summary>
+             Start the signal generation with the specified repeat count
+             <para>The signal pattern is specified by the <see cref="P:Community.Hardware.AnalogSignalGenerator.RawLevels"/> array.</para>
+             </summary>
+            <param name="repeatCount">The repeat count, 0 for never ending</param>
+        </member>
+        <member name="M:Community.Hardware.AnalogSignalGenerator.Start(System.DateTime,System.Int32)">
+             <summary>
+             Start the signal generation  at specified time with specified repeat count
+             <para>The signal pattern is specified by the <see cref="P:Community.Hardware.AnalogSignalGenerator.RawLevels"/> array.</para>
+             </summary>
+             <param name="startTime"></param>
+            <param name="repeatCount">The repeat count, 0 for never ending</param>
+        </member>
+        <member name="M:Community.Hardware.AnalogSignalGenerator.Stop">
+            <summary>
+            Stop the signal generation
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.AnalogSignalGenerator.ToString">
+            <summary>
+            Gets the string representation of this instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Community.Hardware.AnalogSignalGenerator.Channel">
+            <summary>
+            Get the analog output channel
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.AnalogSignalGenerator.Pin">
+            <summary>
+            Get the analog output pin
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.AnalogSignalGenerator.RepeatCount">
+            <summary>
+            Gets the signal repeat decounter. Returns the repeat remaining count, including the currently generating signal.
+            <para>Returns 0 if signal generation is ended</para>
+            <para>For never ending signal, count down from 0 and roll over endlessly</para>
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.AnalogSignalGenerator.Status">
+            <summary>
+            Indicates the signal generation status
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.AnalogSignalGenerator.RawLevels">
+            <summary>
+            Output binary levels for signal generation. The max usable value depends on the bit precision of the hardware DAC: 1023 for 10bits, 4095 for 12bits...
+            <para>The ouptut signal is updated at <see cref="P:Microsoft.SPOT.Hardware.Cpu.SlowClock"/>/<see cref="P:Community.Hardware.AnalogSignalGenerator.ClockDivisor"/> rate.</para>
+            <para>Any array value can be changed on the fly when the signal is generating (but not the array itself).</para>
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown if signal is started.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if array length is less than 2.</exception>
+        </member>
+        <member name="P:Community.Hardware.AnalogSignalGenerator.ClockDivisor">
+            <summary>
+            Get or set the divisor applied to <see cref="P:Microsoft.SPOT.Hardware.Cpu.SlowClock"/> to define the sample clock
+            </summary>
+        </member>
+        <member name="P:Community.Hardware.AnalogSignalGenerator.SampleClock">
+            <summary>
+            Get the output sample clock (defined by <see cref="P:Community.Hardware.AnalogSignalGenerator.ClockDivisor"/>)
+            </summary>
+        </member>
+        <member name="T:Community.Hardware.AnalogSignalGenerator.SignalStatus">
+            <summary>
+            AnalogSignalGenerator status
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.AnalogSignalGenerator.SignalStatus.Uninitialized">
+            <summary>
+            Signal pattern is not set (<see cref="P:Community.Hardware.AnalogSignalGenerator.RawLevels"/> is <c>null</c>)
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.AnalogSignalGenerator.SignalStatus.Ready">
+            <summary>
+            Signal is ready to start
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.AnalogSignalGenerator.SignalStatus.Active">
+            <summary>
+            Signal is currently generating
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.AnalogSignalGenerator.SignalStatus.Pending">
+            <summary>
+            Signal is waiting for start time (delayed start)
+            </summary>
+        </member>
+        <member name="F:Community.Hardware.AnalogSignalGenerator.SignalStatus.Error">
+            <summary>
+            Signal is too fast to be generated properly. Generation is cancelled.
+            </summary>
+        </member>
+    </members>
+</doc>

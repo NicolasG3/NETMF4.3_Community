@@ -87,12 +87,19 @@ const BlockRange g_STM32F4_BlockRange2[] =
 
 const BlockRange g_STM32F4_BlockRange3[] =
 {
+#if defined (TINYCLR_JITTER)
+	//just have to implement Cortex-M jitter
     { BlockRange::BLOCKTYPE_CODE      ,   0, 3 },  // 08020000 CLR         512k
-    { BlockRange::BLOCKTYPE_DEPLOYMENT,   4, 6 },  // 08080000 deployment  384k
-    //{ BlockRange::BLOCKTYPE_CODE      ,   0, 2 },  // 08020000 CLR         384k
-    //{ BlockRange::BLOCKTYPE_DEPLOYMENT,   3, 6 },  // 08080000 deployment  512k
-    //{ BlockRange::BLOCKTYPE_STORAGE_A ,   5, 5 },  // 080C0000 storage A   128k
-    //{ BlockRange::BLOCKTYPE_STORAGE_B ,   6, 6 },  // 080E0000 storage B   128k
+    { BlockRange::BLOCKTYPE_DEPLOYMENT,   4, 4 },  // 080A0000 deployment  128k
+    { BlockRange::BLOCKTYPE_JITTER,       5, 6 },  // 080C0000 Jitter  256k
+#elif defined(__GNUC__) && defined(DEBUG)
+	//GCC debug code is much larger
+    { BlockRange::BLOCKTYPE_CODE      ,   0, 5 },  // 08020000 CLR         768k
+    { BlockRange::BLOCKTYPE_DEPLOYMENT,   6, 6 },  // 080E0000 deployment  128k
+#else
+    { BlockRange::BLOCKTYPE_CODE      ,   0, 3 },  // 08020000 CLR         512k
+    { BlockRange::BLOCKTYPE_DEPLOYMENT,   4, 4 },  // 080A0000 deployment  128k
+#endif
 };
 
 

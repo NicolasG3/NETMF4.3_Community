@@ -37,17 +37,17 @@ namespace Community
             static INT32 GetIOPinCount( CLR_RT_HeapBlock* pMngObj, HRESULT &hr );
             static INT32 GetIOPin( CLR_RT_HeapBlock* pMngObj, INT32 param0, HRESULT &hr );
             static INT32 GetIOStatus( CLR_RT_HeapBlock* pMngObj, INT32 param0, HRESULT &hr );
-            static void InitOutputCompare( CLR_RT_HeapBlock* pMngObj, INT32 param0, INT32 param1, INT32 param2, INT8 param3, HRESULT &hr );
+            static void InitOutputCompare( CLR_RT_HeapBlock* pMngObj, INT32 param0, INT32 param1, INT8 param2, INT32 param3, HRESULT &hr );
             static void InitInputCapture( CLR_RT_HeapBlock* pMngObj, INT32 param0, INT8 param1, HRESULT &hr );
             static void ReleaseIO( CLR_RT_HeapBlock* pMngObj, INT32 param0, HRESULT &hr );
-            static INT32 GetQuadratureEncoderChannelCount( CLR_RT_HeapBlock* pMngObj, HRESULT &hr );
-            static void GetQuadratureEncoderPinsForChannel( CLR_RT_HeapBlock* pMngObj, INT32 param0, INT32 * param1, INT32 * param2, HRESULT &hr );
             static void Initialize( CLR_RT_HeapBlock* pMngObj, HRESULT &hr );
             static void Uninitialize( CLR_RT_HeapBlock* pMngObj, HRESULT &hr );
             static INT32 get_Count( CLR_RT_HeapBlock* pMngObj, HRESULT &hr );
             static void set_Count( CLR_RT_HeapBlock* pMngObj, INT32 param0, HRESULT &hr );
             static INT8 get_CountEnabled( CLR_RT_HeapBlock* pMngObj, HRESULT &hr );
             static void set_CountEnabled( CLR_RT_HeapBlock* pMngObj, INT8 param0, HRESULT &hr );
+            static INT32 GetChannelCount( HRESULT &hr );
+            static void GetQuadratureEncoderPinsForChannel(INT32 param0, INT32 * param1, INT32 * param2, HRESULT &hr );
         };
     }
 }

@@ -60,7 +60,7 @@ HRESULT Library_Community_Hardware_QuadratureEncoder_Community_Hardware_Quadratu
     TINYCLR_NOCLEANUP();
 }
 
-HRESULT Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::GetQuadratureEncoderChannelCount___I4( CLR_RT_StackFrame& stack )
+HRESULT Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::GetChannelCount___STATIC__I4( CLR_RT_StackFrame& stack )
 {
     TINYCLR_HEADER();
     TINYCLR_SET_AND_LEAVE(stack.NotImplementedStub());

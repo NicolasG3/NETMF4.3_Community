@@ -5,6 +5,7 @@
     <Guid>{7ae07ad1-40fc-4507-9d40-5371cf0549a9}</Guid>
     <Description>GHI open source Hardware features</Description>
     <Groups />
+    <GHI_OSHW_HARDWARE_FEATUREPROJ>True</GHI_OSHW_HARDWARE_FEATUREPROJ>
   </PropertyGroup>
   <ItemGroup>
     <DriverLibs Include="GHI_OSHW_Hardware.$(LIB_EXT)" />

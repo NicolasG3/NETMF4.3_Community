@@ -20,11 +20,9 @@ static const CLR_RT_MethodHandler method_lookup[] =
     Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::GetIOPinCount___I4,
     Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::GetIOPin___MicrosoftSPOTHardwareMicrosoftSPOTHardwareCpuPin__I4,
     Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::GetIOStatus___CommunityHardwareQuadratureEncoderIOStatus__I4,
-    Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::InitOutputCompare___VOID__I4__I4__I4__BOOLEAN,
+    Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::InitOutputCompare___VOID__I4__I4__BOOLEAN__I4,
     Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::InitInputCapture___VOID__I4__BOOLEAN,
     Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::ReleaseIO___VOID__I4,
-    Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::GetQuadratureEncoderChannelCount___I4,
-    Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::GetQuadratureEncoderPinsForChannel___VOID__CommunityHardwareQuadratureEncoderChannel__BYREF_MicrosoftSPOTHardwareMicrosoftSPOTHardwareCpuPin__BYREF_MicrosoftSPOTHardwareMicrosoftSPOTHardwareCpuPin,
     Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::Initialize___VOID,
     Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::Uninitialize___VOID,
     NULL,
@@ -35,6 +33,8 @@ static const CLR_RT_MethodHandler method_lookup[] =
     NULL,
     NULL,
     NULL,
+    Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::GetChannelCount___STATIC__I4,
+    Library_Community_Hardware_QuadratureEncoder_Community_Hardware_QuadratureEncoder::GetQuadratureEncoderPinsForChannel___STATIC__VOID__CommunityHardwareQuadratureEncoderChannel__BYREF_MicrosoftSPOTHardwareMicrosoftSPOTHardwareCpuPin__BYREF_MicrosoftSPOTHardwareMicrosoftSPOTHardwareCpuPin,
     NULL,
     NULL,
     NULL,
@@ -44,7 +44,7 @@ static const CLR_RT_MethodHandler method_lookup[] =
 const CLR_RT_NativeAssemblyData g_CLR_AssemblyNative_Community_Hardware_QuadratureEncoder =
 {
     "Community.Hardware.QuadratureEncoder", 
-    0x6E881E00,
+    0x1C17D6E4,
     method_lookup
 };
 

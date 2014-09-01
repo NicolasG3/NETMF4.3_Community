@@ -1,0 +1,18 @@
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Directory>DeviceCode\Targets\Native\Interop\Community_Hardware_AnalogSignalGenerator</Directory>
+    <AssemblyName>Community_Hardware_AnalogSignalGenerator</AssemblyName>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+<ItemGroup>
+<HFile Include="Community_Hardware_AnalogSignalGenerator.h" />
+<Compile Include="Community_Hardware_AnalogSignalGenerator.cpp" />
+<Compile Include="Community_Hardware_AnalogSignalGenerator_Community_Hardware_AnalogSignalGenerator_mshl.cpp" />
+<HFile Include="Community_Hardware_AnalogSignalGenerator_Community_Hardware_AnalogSignalGenerator.h" />
+<Compile Include="Community_Hardware_AnalogSignalGenerator_Community_Hardware_AnalogSignalGenerator.cpp" />
+</ItemGroup>
+<Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>
