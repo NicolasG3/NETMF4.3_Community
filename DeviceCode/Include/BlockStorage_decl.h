@@ -274,8 +274,8 @@ struct BlockRegionInfo
 {
     UINT32      Size()                                const { return (NumBlocks * BytesPerBlock);            }
     ByteAddress BlockAddress(UINT32 blockIndex)       const { return (Start + ((ByteAddress)blockIndex * BytesPerBlock)); }
-    UINT32      OffsetFromBlock(UINT32 Address)       const { return ((Address - Start) % BytesPerBlock);    }
-    UINT32      BlockIndexFromAddress(UINT32 Address) const { return ((Address - Start) / BytesPerBlock);    }
+    UINT32      OffsetFromBlock(ByteAddress Address)       const { return ((Address - Start) % BytesPerBlock);    }
+    UINT32      BlockIndexFromAddress(ByteAddress Address) const { return ((Address - Start) / BytesPerBlock);    }
 
     ByteAddress     Start;                  // Starting Sector address
     UINT32          NumBlocks;              // total number of blocks in this region

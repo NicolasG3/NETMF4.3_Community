@@ -6,4 +6,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <MF_GenerateStubs>True</MF_GenerateStubs>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <MF_GenerateStubs>True</MF_GenerateStubs>
+  </PropertyGroup>
 </Project>

@@ -17,7 +17,7 @@ using Microsoft.SPOT.Hardware;
 namespace Community.Hardware.UsbHost
     {
     /// <summary>
-    /// USB host controller (mass storage only for now)
+    /// USB host controller (mass storage only)
     /// </summary>
     public class UsbController
         {
@@ -63,9 +63,6 @@ namespace Community.Hardware.UsbHost
         private void Dispatcher_OnInterrupt(uint data1, uint data2, DateTime time) {
             uint deviceClass = data1 & 0xFF;
             bool connected = (data1 & 0xFF00) != 0;
-            //if (deviceClass == 0x08 && MassStorageConnectionChanged != null) {
-            //    MassStorageConnectionChanged(this, connected);
-            //    }
             }
         /// <summary>
         /// Stop this controller
@@ -79,17 +76,5 @@ namespace Community.Hardware.UsbHost
             _dispatcher = null;
             return NativeStop();
             }
-        ///// <summary>
-        ///// Event handler for <see cref="MassStorageConnectionChangedEventHandler"/>
-        ///// </summary>
-        ///// <param name="controller">The USB host controller</param>
-        ///// <param name="connected">Indicate wether the mass storage is connected or not</param>
-        //public delegate void MassStorageConnectionChangedEventHandler(UsbController controller, bool connected);
-
-        ///// <summary>
-        ///// Event triggered when a USB mass storage device is connected or disconnected
-        ///// <para>If connected, use <see cref="Microsoft.Spot.IO.VolumeInfo"/> to get the root directory.</para>
-        ///// </summary>
-        //public event MassStorageConnectionChangedEventHandler MassStorageConnectionChanged;
         }
     }

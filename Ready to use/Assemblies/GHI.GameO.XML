@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GHI.GameO</name>
+    </assembly>
+    <members>
+        <member name="T:GHI.GameO.Accelerometer">
+            <summary>
+            Provides access to the accelerometer on the Game-O.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Accelerometer.Enable">
+            <summary>
+            Enables the accelerometer functionality if it was disabled.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Accelerometer.Disable">
+            <summary>
+            Disables the accelerometer to save power.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Accelerometer.GetXYZ(System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Gets the x, y, and z reading from the accelerometer.
+            </summary>
+            <param name="x">The x value.</param>
+            <param name="y">The y value.</param>
+            <param name="z">The z value.</param>
+        </member>
+        <member name="P:GHI.GameO.Accelerometer.IsEnabled">
+            <summary>
+            Returns whether or not the accelerometer is enabled.
+            </summary>
+        </member>
+        <member name="T:GHI.GameO.Display">
+            <summary>
+            Provides access to the display on the Game-O.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Display.GetCurrentOreintation">
+            <summary>
+            The current orientation of the display.
+            </summary>
+            <returns>The current orientation.</returns>
+        </member>
+        <member name="M:GHI.GameO.Display.GetWidth">
+            <summary>
+            The width of the display.
+            </summary>
+            <returns>The current width.</returns>
+        </member>
+        <member name="M:GHI.GameO.Display.GetHeight">
+            <summary>
+            The height of the display.
+            </summary>
+            <returns>The current height.</returns>
+        </member>
+        <member name="M:GHI.GameO.Display.Initialize">
+            <summary>
+            Initializes the display so it is ready for use.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Display.SetOrientation(GHI.GameO.Display.Orientation)">
+            <summary>
+            Changes the orientation of the device.
+            </summary>
+            <param name="orientation">The orietnation to change to.</param>
+            <returns>Whether or not it was changed.</returns>
+        </member>
+        <member name="M:GHI.GameO.Display.TurnBackLightOn">
+            <summary>
+            Turns the display backlight on.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Display.TurnBackLightOff">
+            <summary>
+            Turns the backlight off.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Display.Draw(System.String,System.Int32,System.Int32,Microsoft.SPOT.Font,Microsoft.SPOT.Presentation.Media.Color,Microsoft.SPOT.Presentation.Media.Color)">
+            <summary>
+            Draws a string to the display.
+            </summary>
+            <param name="text">The text to write.</param>
+            <param name="x">The x coordinate where to draw.</param>
+            <param name="y">The y coordinate where to draw.</param>
+            <param name="font">The font to use.</param>
+            <param name="foreColor">The color of the text.</param>
+            <param name="backColor">The background color of the text.</param>
+        </member>
+        <member name="M:GHI.GameO.Display.Draw(GHI.GameO.TinyBitmap,System.Int32,System.Int32)">
+            <summary>
+            Draws a TinyBitmap to the display.
+            </summary>
+            <param name="tb">The TinyBitmap to display.</param>
+            <param name="xDst">The x coordinate where to draw.</param>
+            <param name="yDst">The y coordinate where to draw.</param>
+        </member>
+        <member name="M:GHI.GameO.Display.Draw(GHI.GameO.TinyBitmap,System.Int32,System.Int32,System.Int32,System.Int32,System.UInt32,System.UInt32)">
+            <summary>
+            Draws a TinyBitmap to the display.
+            </summary>
+            <param name="tb">The TinyBitmap to display.</param>
+            <param name="xDst">The x coordinate where to draw.</param>
+            <param name="yDst">The y coordinate where to draw.</param>
+            <param name="xSrc">The x coordinate of the portion of the bitmap you wish to start drawing from.</param>
+            <param name="ySrc">The y coordinate of the portion of the bitmap you wish to start drawing from.</param>
+            <param name="width">The width of the TinyBitmap you wish to draw.</param>
+            <param name="height">The height of the TinyBitmap you wish to draw.</param>
+        </member>
+        <member name="M:GHI.GameO.Display.FillRect(System.Int32,System.Int32,System.Int32,System.Int32,System.UInt16)">
+            <summary>
+            Draws a rectangle on the screen.
+            </summary>
+            <param name="x">The x coordinate where to draw.</param>
+            <param name="y">The y coordinate where to draw.</param>
+            <param name="width">The width of the rectangle.</param>
+            <param name="height">The height of the rectangle.</param>
+            <param name="color">The color of the rectangle.</param>
+        </member>
+        <member name="T:GHI.GameO.Display.Orientation">
+            <summary>
+            The possible orientations of the display.
+            </summary>
+        </member>
+        <member name="T:GHI.GameO.Key">
+            <summary>
+            Provides access to the keys on the Game-O.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Key.Enable">
+            <summary>
+            Enables the key functionality if it was disabled.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Key.Disable">
+            <summary>
+            Disables the key functionality.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Key.IsKeyPressed(GHI.GameO.Key.Keys)">
+            <summary>
+            Gets the state of a key.
+            </summary>
+            <param name="key">The key to test.</param>
+            <returns>Whether or not the key is pressed.</returns>
+        </member>
+        <member name="P:GHI.GameO.Key.IsEnabled">
+            <summary>
+            Returns whether or not the Accelerometer is enabled.
+            </summary>
+        </member>
+        <member name="E:GHI.GameO.Key.KeyPressed">
+            <summary>
+            The event that is raised when a key is pressed.
+            </summary>
+        </member>
+        <member name="T:GHI.GameO.Key.Keys">
+            <summary>
+            The keys on the Game-O.
+            </summary>
+        </member>
+        <member name="T:GHI.GameO.Key.KeyEventHandler">
+            <summary>
+            Used to handle the KeyPressed event.
+            </summary>
+            <param name="key">The key that was pressed.</param>
+        </member>
+        <member name="T:GHI.GameO.PowerControl">
+            <summary>
+            Provides access to the power control of the Game-O.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.PowerControl.PowerOff">
+            <summary>
+            Turns off the device.
+            </summary>
+        </member>
+        <member name="T:GHI.GameO.Sound">
+            <summary>
+            Provides access to sound on the Game-O.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Sound.Enable">
+            <summary>
+            Enables the sound functionality if it was disabled.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Sound.Disable">
+            <summary>
+            Disables the accelerometer to save power.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Sound.PlayWAVAudio(System.Byte[]@,System.Int32,System.Int32)">
+            <summary>
+            Plays an 8bit mono WAV file at 4,800 samples/second.
+            </summary>
+            <param name="data">The WAV file data array</param>
+            <param name="offset">The offset into the array to begin playing</param>
+            <param name="count">The amount of the array to play</param>
+        </member>
+        <member name="M:GHI.GameO.Sound.StartBuzzer">
+            <summary>
+            Turns on the buzzer.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.Sound.PlayTone(System.UInt32,System.UInt32)">
+            <summary>
+            Plays a tone on the buzzer after you started it.
+            </summary>
+            <param name="frequency">The tone to play.</param>
+            <param name="duration">How long to play the tone for. If 0, plays until StopBuzzer() is called.</param>
+        </member>
+        <member name="M:GHI.GameO.Sound.StopBuzzer">
+            <summary>
+            Turns off the buzzer.
+            </summary>
+        </member>
+        <member name="P:GHI.GameO.Sound.IsEnabled">
+            <summary>
+            Returns whether or not sound is enabled.
+            </summary>
+        </member>
+        <member name="T:GHI.GameO.TinyBitmap">
+            <summary>
+            A class that stores an image in the format the device expects.
+            </summary>
+        </member>
+        <member name="F:GHI.GameO.TinyBitmap.Data">
+            <summary>
+            The raw byte data to be sent to the device.
+            </summary>
+        </member>
+        <member name="F:GHI.GameO.TinyBitmap.Width">
+            <summary>
+            The width of the image.
+            </summary>
+        </member>
+        <member name="F:GHI.GameO.TinyBitmap.Height">
+            <summary>
+            The height of the image.
+            </summary>
+        </member>
+        <member name="M:GHI.GameO.TinyBitmap.#ctor(Microsoft.SPOT.Bitmap)">
+            <summary>
+            Constructs a TinyBitmap from a preexisting bitmap.
+            </summary>
+            <param name="bitmap">The bitmap to construct from.</param>
+        </member>
+        <member name="M:GHI.GameO.TinyBitmap.#ctor(System.Byte[],System.UInt32,System.UInt32)">
+            <summary>
+            Constructs a TinyBitmap from the raw pre-decoded bytes.
+            </summary>
+            <param name="data">The bitmap data.</param>
+            <param name="width">The width of the bitmap.</param>
+            <param name="height">The height of the bitmap.</param>
+        </member>
+        <member name="M:GHI.GameO.TinyBitmap.#ctor(System.Byte[])">
+            <summary>
+            Constructs a TinyBitmap from a byte array with length and width ints at the beginning.
+            </summary>
+            <param name="data">The bitmap data. The first 4 bytes represent the width, the next four bytes represent the height, and the remainder represent the bitmap.</param>
+        </member>
+    </members>
+</doc>

@@ -104,7 +104,7 @@ BOOL USB_MSC_Driver::Read( void* context, ByteAddress Address, UINT32 NumBytes, 
 		CLR_Debug::Printf( "USB_MSC_Driver::Read error: Adress must match a sector start, sector=%08x, Address=%08x, NumBytes %d\r\n", startSector, Address, NumBytes);
 		return FALSE;
 	}
-	CLR_Debug::Printf( "USB_MSC_Driver::Read() address=%lld, numBytes=%d sector=%d\r\n", Address, NumBytes, startSector);
+	//CLR_Debug::Printf( "USB_MSC_Driver::Read() address=%lld, numBytes=%d sector=%d\r\n", Address, NumBytes, startSector);
 	//CLR_Debug::Printf( "USB_MSC_Driver::Read offset=%d, StartSector=0x%08x, Address=%08x, NumBytes %d\r\n", offset, StartSector, Address, NumBytes);
 	USBH_MSC_BOTXferParam.CmdStateMachine = CMD_SEND_STATE;
 	do {

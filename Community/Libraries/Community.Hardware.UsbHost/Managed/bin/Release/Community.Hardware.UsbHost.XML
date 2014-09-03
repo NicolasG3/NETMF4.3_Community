@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Community.Hardware.UsbHost</name>
+    </assembly>
+    <members>
+        <member name="T:Community.Hardware.UsbHost.UsbController">
+            <summary>
+            USB host controller (mass storage only)
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.UsbHost.UsbController.#ctor">
+            <summary>
+            Private constructor
+            </summary>
+        </member>
+        <member name="M:Community.Hardware.UsbHost.UsbController.Start">
+            <summary>
+            Start this controller
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Community.Hardware.UsbHost.UsbController.Dispatcher_OnInterrupt(System.UInt32,System.UInt32,System.DateTime)">
+            <summary>
+            Internal interrupt handler
+            </summary>
+            <param name="data1"></param>
+            <param name="data2"></param>
+            <param name="time"></param>
+        </member>
+        <member name="M:Community.Hardware.UsbHost.UsbController.Stop">
+            <summary>
+            Stop this controller
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Community.Hardware.UsbHost.UsbController.DefaultController">
+            <summary>
+            Get the default USB host controller
+            </summary>
+        </member>
+    </members>
+</doc>

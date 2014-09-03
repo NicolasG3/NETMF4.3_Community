@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Directory>Community\Community_Hardware_UsbHost</Directory>
     <AssemblyName>Community_Hardware_UsbHost</AssemblyName>
@@ -9,7 +9,7 @@
       <MFComponent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Community_Hardware_QED" Guid="{4A034338-0C8A-45FF-BD61-585757698821}" ProjectPath="$(SPOCLIENT)\Community\Features\Community_hardware_QED.libcatproj" Conditional="" xmlns="">
         <VersionDependency xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
           <Major>4</Major>
-          <Minor>0</Minor>
+          <Minor>3</Minor>
           <Revision>0</Revision>
           <Build>0</Build>
           <Extra />

@@ -101,8 +101,9 @@
     <RequiredProjects Include="$(SPOCLIENT)\Community\Target\STM32F4\STM32F4_HardwareSerial\dotnetmf.proj" />
   </ItemGroup>
 
-  <!-- UsbHost platform lib ******************************************************************** --><!--
-  <ItemGroup>
+  <!-- UsbHost platform lib ******************************************************************** -->
+  <!--a clean implementation should be device dependent...-->
+  <!--<ItemGroup>
     <DriverLibs Include="STM32F4_UsbHost.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\Community\Target\STM32F4\STM32F4_UsbHost\dotnetmf.proj" />
   </ItemGroup>-->

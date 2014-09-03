@@ -17,7 +17,6 @@
   <ItemGroup>
     <!--<TinyCLR_Defines Include="PLATFORM_NO_CLR_TRACE=1" />-->
     <TinyCLR_Defines Include="TINYCLR_NO_IL_INLINE=1" />
-    <!--<TinyCLR_Defines Include="TINYCLR_JITTER=1" />-->
   </ItemGroup>   
   <ItemGroup>
     <IncludePaths Include="Solutions\FEZCerberus_Community\" />
